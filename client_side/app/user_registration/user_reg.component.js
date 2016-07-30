@@ -22,13 +22,15 @@ var UserRegistrationComponent = (function () {
     function UserRegistrationComponent(rr) {
         this.rr = rr;
         this.dt = new Date();
+        this.message = {};
         this.area = ['Doha', 'Test'];
         this.user = {};
     }
     UserRegistrationComponent.prototype.onSubmitTemplateBased = function () {
         var _this = this;
-        this.rr.registerUser(this.user).subscribe(function (data) { return _this.message = data.text; }, // put the data returned from the server in our variable
-        // error => console.log("Error HTTP Post Service"), // in case of failure show this message
+        this.rr.registerUser(this.user).subscribe(function (data) { return _this.message = {}; }, // put the data returned from the server in our variable
+        function (// put the data returned from the server in our variable
+            error) { return console.log("Error HTTP Post Service"); }, // in case of failure show this message
         function () { return console.log("Job Done Post !"); } //run this code in all cases
          //run this code in all cases
         );
