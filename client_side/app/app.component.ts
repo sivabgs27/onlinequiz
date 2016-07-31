@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { UserRegistrationComponent} from './user_reg.component';
+import { UserRegistrationComponent} from './user_registration/user_reg.component';
 
 
 @Component({

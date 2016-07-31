@@ -19,7 +19,7 @@ import { UserRegistrationService } from './user_reg.service';
     selector: 'register-user',
     providers: [UserRegistrationService],
      directives: [DATEPICKER_DIRECTIVES, CORE_DIRECTIVES, FORM_DIRECTIVES,NgModel],
-    templateUrl:'./client_side/app/user.html'
+    templateUrl:'./client_side/app/user_registration/user.html'
                                                                    
 })
 
@@ -40,7 +40,7 @@ constructor(private rr:UserRegistrationService) {
   onSubmitTemplateBased() {
         this.rr.registerUser(this.user).subscribe(
                 data => this.message = data.text, // put the data returned from the server in our variable
-                error => console.log("Error HTTP Post Service"), // in case of failure show this message
+               // error => console.log("Error HTTP Post Service"), // in case of failure show this message
                 () => console.log("Job Done Post !")//run this code in all cases
             );
     }
