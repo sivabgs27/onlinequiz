@@ -4,12 +4,13 @@
   "description": "online quiz website ",
   "main": "./server_side/server.js",
   "scripts": {
-    "start": "tsc && concurrently \"npm run tsc:w\" \"node-dev ./server_side/server\" \"browser-sync start --proxy localhost:8080 --files client_side/**/* \" ",
+    "start": "tsc && concurrently \"npm run tsc:w\" \"node-dev ./server_side/server\" \"\" ",
     "lite": "lite-server",
     "postinstall": "typings install",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "typings",
+    "browsersync": "browser-sync start --proxy localhost:8080 --files client_side/**/* ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
