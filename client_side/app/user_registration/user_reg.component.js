@@ -22,12 +22,13 @@ var UserRegistrationComponent = (function () {
     function UserRegistrationComponent(rr) {
         this.rr = rr;
         this.dt = new Date();
+        this.message = {};
         this.area = ['Doha', 'Test'];
         this.user = {};
     }
     UserRegistrationComponent.prototype.onSubmitTemplateBased = function () {
         var _this = this;
-        this.rr.registerUser(this.user).subscribe(function (data) { return _this.message = data.text; }, // put the data returned from the server in our variable
+        this.rr.registerUser(this.user).subscribe(function (data) { return _this.message = {}; }, // put the data returned from the server in our variable
         function (// put the data returned from the server in our variable
             error) { return console.log("Error HTTP Post Service"); }, // in case of failure show this message
         function () { return console.log("Job Done Post !"); } //run this code in all cases
@@ -39,7 +40,7 @@ var UserRegistrationComponent = (function () {
             selector: 'register-user',
             providers: [user_reg_service_1.UserRegistrationService],
             directives: [ng2_bootstrap_1.DATEPICKER_DIRECTIVES, common_1.CORE_DIRECTIVES, forms_1.FORM_DIRECTIVES, forms_2.NgModel],
-            templateUrl: './client_side/app/user.html'
+            templateUrl: './client_side/app/user_registration/user.html'
         }), 
         __metadata('design:paramtypes', [user_reg_service_1.UserRegistrationService])
     ], UserRegistrationComponent);

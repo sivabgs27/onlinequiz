@@ -19,7 +19,8 @@ var UserRegistrationService = (function () {
     }
     UserRegistrationService.prototype.registerUser = function (user) {
         var data = JSON.stringify(user);
-        var headers = new http_1.Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+        //console.log("Testing post data....."+data);
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ headers: headers, method: "post" });
         return this.http.post(this.API_URL, data, options)
             .map(function (res) { return res.json(); })
