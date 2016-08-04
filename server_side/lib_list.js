@@ -1,0 +1,1 @@
+exports.ss = require('./api/user_reg.js');
