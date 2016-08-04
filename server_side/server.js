@@ -8,13 +8,14 @@ app.use(bodyParser.json());
 app.use('/', express.static('./client_side'));
 app.use('/', express.static('./'));
 
-app.post('/user', function (req, res) {
+app.post('/user_login', function (req, res) {
 
   // 
-  console.log( 'siva...' + JSON.stringify(req.body) );
-  res.send(req.body);
+ res.setHeader('Content-Type', 'application/json');
+ res.send(JSON.stringify({ flag: true }));
 
 });
+
 
 app.listen(port);
 console.log('Running ---  on: '+port);

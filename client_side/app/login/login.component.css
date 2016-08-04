@@ -1,0 +1,34 @@
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+.test
+{
+    padding-left: 35%;
+    padding-right: 35%;
+    padding-top: 100px;
+}
+
+@media (max-width: 767px){
+
+    .test{
+   padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 100px;
+    }
+}
