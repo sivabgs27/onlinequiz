@@ -12,8 +12,6 @@ var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
 var forms_1 = require('@angular/forms');
 var forms_2 = require('@angular/forms');
-//import * as moment_ from 'moment';
-var ng2_bootstrap_1 = require('ng2-bootstrap/ng2-bootstrap');
 var user_reg_service_1 = require('./user_reg.service');
 /**
  * UserDetails
@@ -24,6 +22,8 @@ var UserRegistrationComponent = (function () {
         this.dt = new Date();
         this.message = {};
         this.area = ['Doha', 'Test'];
+        this.Area = '0';
+        this.C_Area = '0';
         this.user = {};
     }
     UserRegistrationComponent.prototype.onSubmitTemplateBased = function () {
@@ -39,8 +39,9 @@ var UserRegistrationComponent = (function () {
         core_1.Component({
             selector: 'register-user',
             providers: [user_reg_service_1.UserRegistrationService],
-            directives: [ng2_bootstrap_1.DATEPICKER_DIRECTIVES, common_1.CORE_DIRECTIVES, forms_1.FORM_DIRECTIVES, forms_2.NgModel],
-            templateUrl: './client_side/app/user_registration/user.html'
+            directives: [common_1.CORE_DIRECTIVES, forms_1.FORM_DIRECTIVES, forms_2.NgModel, common_1.NgIf],
+            templateUrl: './client_side/app/user_registration/user.html',
+            styleUrls: ['client_side/app/user_registration/user_reg.component.css']
         }), 
         __metadata('design:paramtypes', [user_reg_service_1.UserRegistrationService])
     ], UserRegistrationComponent);

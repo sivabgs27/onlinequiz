@@ -1,114 +1,140 @@
-<div class="container">
-     <div class="row">
-  <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="">TELP</a>
-     
-    </div>
+<div class="container-fluid">
+  
 
-    
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    
-      <ul class="nav navbar-nav navbar-right">
-        <li><button type="button" class="btn btn-default navbar-btn">Login </button></li>
-          
-       <li><button type="button" class="btn btn-default navbar-btn">Sign Up</button></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-     </div>
-    <div class="row">
-         <div class="col-md-8">
-             <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h4 class="text-center login-title">Welcome To Telp Online Quiz</h4>
-                </div>
-                <div class="panel-body">
-                <img src="/telp.jpg" class="img-fluid" alt="Telp International">    
-                </div>
+   <h2 class="text-center login-title">User Registration</h2>
+               
+              
+     <form #f="ngForm" (ngSubmit)="onSubmitTemplateBased()">
 
-             </div>
-         </div>
-        <div class="col-sm-6 col-md-4">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                <h4 class="text-center login-title">Users1 Registration</h4>
-                </div>
-                <div class="panel-body">
-                 <form #f="ngForm" (ngSubmit)="onSubmitTemplateBased()">
+         <div class="row">
+
+            <div class="col-sm-6 col-md-4">
 
                   <div class="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" [(ngModel)]="user.Name" name="Name" class="form-control" required>
+                  <label [hidden]="!user.Name" for="name">Name</label>
+                   <label [hidden]="user.Name" for="name">&nbsp;</label>
+                  <input type="text" [(ngModel)]="user.Name" name="Name" class="form-control input-lg" placeholder="Name" required>
+                  </div>
+
+                  <div class="form-group">
+                  <label for="email" [hidden]="!user.Email">Email Address</label>
+                  <label for="email" [hidden]="user.Email">&nbsp;</label>
+                  <input type="email" [(ngModel)]="user.Email" name="Email" class="form-control input-lg" placeholder="Email" required>
                   </div>
                    
                   <div class="form-group">
-                  <label for="dob">Date of Birth</label>
-                 <input type="date" [(ngModel)]="user.Dob" name="Dob" class="form-control" required>
+                  <label [hidden]="!user.Dob" for="dob">Date of Birth</label>
+                  <label [hidden]="user.Dob" for="dob">&nbsp;</label>
+                 <input type="text" [(ngModel)]="user.Dob" name="Dob" class="form-control input-lg" placeholder="Date of Birth" onfocus="(this.type='date')" required>
                   </div>
 
+                  <br>
+
                   <div class="form-group">
-                  
-                  <div class="radio-inline">
-                  <label>
-                  <input type="radio" name="Sex" value="Male" [(ngModel)]="user.Sex" required> 
-                  Male
+  
+                  <label for="sex" class="checkbox-inline "> 
+                  <input type="radio" class="big" name="Sex" value="Male" [(ngModel)]="user.Sex" required> 
+                  <strong> Male </strong>
                   </label>
-                  </div>
-                  <div class="radio-inline">
-                  <label>
-                 <input type="radio"  name="Sex"  value="Female" [(ngModel)]="user.Sex" required >
-                 Female
+              
+                  <label for="sex" class="checkbox-inline">
+                  <input type="radio"  name="Sex" class="big" value="Female" [(ngModel)]="user.Sex" required >
+                  <strong> Female </strong>
                  </label>
-                 </div>
+      
                   </div>
 
-                  <div class="form-group">
-                  <label for="email">Email Address</label>
-                  <input type="email" [(ngModel)]="user.Email" name="Email" class="form-control" required>
-                  </div>
+           </div>
+           <div class="col-sm-6 col-md-4">
 
                   <div class="form-group">
-                  <label for="work">Work</label>
-                  <input type="text" [(ngModel)]="user.work" name="Work" class="form-control" required>
+                  <label for="work" [hidden]="!user.work">Work</label>
+                  <label for="work" [hidden]="user.work">&nbsp;</label>
+                  <input type="text" [(ngModel)]="user.work" name="Work" class="form-control input-lg" placeholder="Work" required>
                   </div>
 
                  <div class="form-group">
-                  <label for="Area">Area</label>
-                    <select class="form-control" required [(ngModel)]="user.Area" name="Area">
+                  <label for="Area" [hidden]="Area == '0'">Area</label>
+                    <label for="Area" [hidden]="Area != '0'">&nbsp;</label>
+                    <select class="form-control input-lg" required [(ngModel)]="Area" name="Area" >
+                      <option [disabled]="true" [value]="0">Area</option>
                    <option *ngFor="let p of area" [value]="p">{{p}}</option>
                    </select>
                    </div>
 
                    <div class="form-group">
-                  <label for="cArea">Current living Area</label>
-                    <select class="form-control" required [(ngModel)]="user.C_Area" name="C_Area">
+                   <label for="cArea" [hidden]="C_Area == '0'">Current living Area</label>
+                   <label for="cArea" [hidden]="C_Area != '0'">&nbsp;</label>
+                    <select class="form-control input-lg" required [(ngModel)]="C_Area" name="C_Area">
+                   <option [disabled]="true" [value]="0">Current living Area</option>
                    <option *ngFor="let p of area" [value]="p">{{p}}</option>
                    </select>
                    </div>
 
-                   <div class="form-group">
-                  <label for="ref">Reference. ( Who gave reference)</label>
-                  <input type="text" class="form-control" required [(ngModel)]="user.Reference" name="Reference">
+                  <div class="form-group">
+                  <label for="ref" [hidden]="!Reference">Reference. ( Who gave reference)</label>
+                  <label for="ref" [hidden]="Reference">&nbsp;</label>
+                  <input type="text" class="form-control input-lg" required [(ngModel)]="Reference" name="Reference" placeholder="Reference. ( Who gave reference)">
                   </div>
 
-               
-                <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Register</button>
-                </form>
                 </div>
 
-            </div>
-      
+                <div class="col-sm-6 col-md-4">
+
+                  <div class="form-group">
+                  <label for="pno1" [hidden]="!user.pno1">phone_number1</label>
+                  <label for="pno1" [hidden]="user.pno1">&nbsp;</label>
+                  <input type="text" [(ngModel)]="user.pno1" name="pno1" class="form-control input-lg" placeholder="phone_number1" required>
+                  </div>
+
+                  <div class="form-group">
+                  <label for="pno1" [hidden]="!user.pno2">phone_number2</label>
+                  <label for="pno1" [hidden]="user.pno2">&nbsp;</label>
+                  <input type="text" [(ngModel)]="user.pno2" name="pno2" class="form-control input-lg" placeholder="phone_number2" required>
+                  </div>
+
+                  <div class="form-group">
+                  <label for="pno1" [hidden]="!user.skill">Skill_set</label>
+                  <label for="pno1" [hidden]="user.skill">&nbsp;</label>
+                  <input type="text" [(ngModel)]="user.skill" name="skill" class="form-control input-lg" placeholder="Skill_set" required>
+                  </div>
+
+     
+
+               </div>
+
+           </div> 
+                  <br>
+                  <br>
+
+                  <div class="row">
+
+                   <div class="col-sm-6 col-md-4">
+                   </div>
+
+                   <div class="col-sm-6 col-md-4 center-block">
+                   <button type="submit" class="btn btn-primary btn-lg btn-block" >Register</button>
+                   </div>
+                   
+
+                   <div class="col-sm-6 col-md-4">
+                   </div>
+
+                  </div>
+
+              
+                  
+
+                </form>
+                
         </div>
-        
-    </div>
-</div>
+
+
+
+
+
+
+            
+
+      
+      

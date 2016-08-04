@@ -9,8 +9,11 @@ app.use('/', express.static('./client_side'));
 app.use('/', express.static('./'));
 
 app.post('/user', function (req, res) {
+
+  // 
   console.log( 'siva...' + JSON.stringify(req.body) );
-  res.send('Got a POST request');
+  res.send(JSON.stringify(req.body));
+
 });
 
 app.listen(port);

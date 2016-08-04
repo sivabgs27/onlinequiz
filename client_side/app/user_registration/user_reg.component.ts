@@ -1,8 +1,8 @@
 import { Component, } from '@angular/core';
-import {CORE_DIRECTIVES} from '@angular/common';
+import {CORE_DIRECTIVES,NgIf} from '@angular/common';
 import {FORM_DIRECTIVES} from '@angular/forms';
 import {NgModel} from '@angular/forms';
-//import * as moment_ from 'moment';
+
 import {DATEPICKER_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
 import { NgForm }    from '@angular/forms';
 
@@ -18,14 +18,17 @@ import { UserRegistrationService } from './user_reg.service';
 @Component({
     selector: 'register-user',
     providers: [UserRegistrationService],
-     directives: [DATEPICKER_DIRECTIVES, CORE_DIRECTIVES, FORM_DIRECTIVES,NgModel],
-    templateUrl:'./client_side/app/user_registration/user.html'
+    directives: [CORE_DIRECTIVES, FORM_DIRECTIVES,NgModel,NgIf],
+    templateUrl:'./client_side/app/user_registration/user.html',
+    styleUrls:['client_side/app/user_registration/user_reg.component.css']
                                                                    
 })
 
 export class UserRegistrationComponent{
   
+  
 constructor(private rr:UserRegistrationService) {
+    
     
 }
 
@@ -33,7 +36,13 @@ constructor(private rr:UserRegistrationService) {
 
   message: Object={};
   area = ['Doha','Test'];
+
+  Area:string='0';
+  C_Area:string='0';
+  Reference:string;
+
   user:Object={};
+  
   
  
 

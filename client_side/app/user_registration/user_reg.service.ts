@@ -17,7 +17,11 @@ export class UserRegistrationService {
  registerUser(user:Object) {
     let data = JSON.stringify(user);
     //console.log("Testing post data....."+data);
-    let headers = new Headers({ 'Content-Type': 'application/json' });
+
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Access-Control-Allow-Origin', '*');
+
     let options = new RequestOptions({ headers: headers, method: "post" });
    return this.http.post(this.API_URL, data,options)
       .map(res => res.json())

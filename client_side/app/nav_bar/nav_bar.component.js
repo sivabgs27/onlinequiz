@@ -9,20 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var user_reg_component_1 = require('./user_registration/user_reg.component');
-var nav_bar_component_1 = require('./nav_bar/nav_bar.component');
-var AppComponent = (function () {
-    function AppComponent() {
+var NavBarComponent = (function () {
+    function NavBarComponent() {
+        this.snav_w = '0px';
     }
-    AppComponent = __decorate([
+    NavBarComponent.prototype.snav_open = function () {
+        this.snav_w = '250px';
+    };
+    NavBarComponent.prototype.closeNav = function () {
+        this.snav_w = '0px';
+    };
+    NavBarComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            directives: [user_reg_component_1.UserRegistrationComponent, nav_bar_component_1.NavBarComponent],
-            template: '<div><nav-bar></nav-bar> <register-user></register-user></div>'
+            selector: 'nav-bar',
+            templateUrl: './client_side/app/nav_bar/nav_bar.html',
+            styleUrls: ['./client_side/app/nav_bar/nav_bar.component.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], NavBarComponent);
+    return NavBarComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.NavBarComponent = NavBarComponent;
+//# sourceMappingURL=nav_bar.component.js.map
