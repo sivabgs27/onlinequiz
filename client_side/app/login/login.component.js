@@ -43,6 +43,7 @@ var LoginComponent = (function () {
         }
         else {
             this.showerr = false;
+            this.showser_err = true;
         }
         console.log(c, isValid);
     };
