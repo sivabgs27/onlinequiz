@@ -12,12 +12,15 @@ var core_1 = require('@angular/core');
 var NavBarComponent = (function () {
     function NavBarComponent() {
         this.snav_w = '0px';
+        this.btnflag = false;
     }
     NavBarComponent.prototype.snav_open = function () {
         this.snav_w = '250px';
+        this.btnflag = true;
     };
     NavBarComponent.prototype.closeNav = function () {
         this.snav_w = '0px';
+        this.btnflag = false;
     };
     NavBarComponent = __decorate([
         core_1.Component({

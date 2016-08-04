@@ -12,14 +12,18 @@ import {NgStyle} from '@angular/common';
 export class NavBarComponent
 {
     snav_w='0px';
+    btnflag:boolean=false;
+    
 
     snav_open()
     {
       this.snav_w='250px';
+      this.btnflag=true;
     }
     closeNav()
     {
         this.snav_w='0px';
+       this.btnflag=false;
     }
 
 }

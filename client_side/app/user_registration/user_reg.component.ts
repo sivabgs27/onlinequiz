@@ -37,17 +37,27 @@ constructor(private rr:UserRegistrationService) {
   message: Object={};
   area = ['Doha','Test'];
 
+ 
+  Name:string;
+  Email:string;
+  Dob:string;
+  Sex:string;
+  work:string;
   Area:string='0';
   C_Area:string='0';
   Reference:string;
-
-  user:Object={};
+  Pho1:string;
+  Pho2:string;
+  Skill:string;
   
   
- 
+  
+  
 
   onSubmitTemplateBased() {
-        this.rr.registerUser(this.user).subscribe(
+
+      let user = JSON.stringify({ Name: this.Name, Email: this.Email, Dob: this.Dob, Sex:this.Sex,work:this.work,Area:this.Area,C_Area:this.C_Area,Reference:this.Reference,Pho1:this.Pho1,Pho2:this.Pho2,Skill:this.Skill });
+        this.rr.registerUser(user).subscribe(
                 data => this.message = {}, // put the data returned from the server in our variable
                 error => console.log("Error HTTP Post Service"), // in case of failure show this message
                 () => console.log("Job Done Post !")//run this code in all cases

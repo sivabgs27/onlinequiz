@@ -18,13 +18,13 @@ var UserRegistrationService = (function () {
         this.http = http;
     }
     UserRegistrationService.prototype.registerUser = function (user) {
-        var data = JSON.stringify(user);
+        //let data = JSON.stringify(user);
         //console.log("Testing post data....."+data);
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
         headers.append('Access-Control-Allow-Origin', '*');
         var options = new http_1.RequestOptions({ headers: headers, method: "post" });
-        return this.http.post(this.API_URL, data, options)
+        return this.http.post(this.API_URL, user, options)
             .map(function (res) { return res.json(); })
             .catch(this.handleError);
     };

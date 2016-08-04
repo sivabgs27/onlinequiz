@@ -24,11 +24,11 @@ var UserRegistrationComponent = (function () {
         this.area = ['Doha', 'Test'];
         this.Area = '0';
         this.C_Area = '0';
-        this.user = {};
     }
     UserRegistrationComponent.prototype.onSubmitTemplateBased = function () {
         var _this = this;
-        this.rr.registerUser(this.user).subscribe(function (data) { return _this.message = {}; }, // put the data returned from the server in our variable
+        var user = JSON.stringify({ Name: this.Name, Email: this.Email, Dob: this.Dob, Sex: this.Sex, work: this.work, Area: this.Area, C_Area: this.C_Area, Reference: this.Reference, Pho1: this.Pho1, Pho2: this.Pho2, Skill: this.Skill });
+        this.rr.registerUser(user).subscribe(function (data) { return _this.message = {}; }, // put the data returned from the server in our variable
         function (// put the data returned from the server in our variable
             error) { return console.log("Error HTTP Post Service"); }, // in case of failure show this message
         function () { return console.log("Job Done Post !"); } //run this code in all cases

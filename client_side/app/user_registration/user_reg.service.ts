@@ -14,8 +14,8 @@ export class UserRegistrationService {
  {
    this.http=http;
  }
- registerUser(user:Object) {
-    let data = JSON.stringify(user);
+ registerUser(user) {
+    //let data = JSON.stringify(user);
     //console.log("Testing post data....."+data);
 
     let headers = new Headers();
@@ -23,7 +23,7 @@ export class UserRegistrationService {
     headers.append('Access-Control-Allow-Origin', '*');
 
     let options = new RequestOptions({ headers: headers, method: "post" });
-   return this.http.post(this.API_URL, data,options)
+   return this.http.post(this.API_URL, user,options)
       .map(res => res.json())
      .catch(this.handleError);
   }

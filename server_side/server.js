@@ -12,7 +12,7 @@ app.post('/user', function (req, res) {
 
   // 
   console.log( 'siva...' + JSON.stringify(req.body) );
-  res.send(JSON.stringify(req.body));
+  res.send(req.body);
 
 });
 
