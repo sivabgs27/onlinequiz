@@ -9,41 +9,72 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var common_1 = require('@angular/common');
 var forms_1 = require('@angular/forms');
-var forms_2 = require('@angular/forms');
 var user_reg_service_1 = require('./user_reg.service');
-/**
- * UserDetails
- */
 var UserRegistrationComponent = (function () {
-    function UserRegistrationComponent(rr) {
+    function UserRegistrationComponent(rr, builder) {
         this.rr = rr;
-        this.dt = new Date();
-        this.message = {};
+        this.builder = builder;
+        this.submitted = false;
+        this.events = [];
         this.area = ['Doha', 'Test'];
-        this.Area = '0';
-        this.C_Area = '0';
+        this.myForm = this.builder.group({
+            Name: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.minLength(5)])],
+            Email: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.minLength(5)])],
+            Dob: ['', [forms_1.Validators.required]],
+            Sex: ['', [forms_1.Validators.required]],
+            Work: ['', [forms_1.Validators.required]],
+            Area: ['0', [forms_1.Validators.required]],
+            C_Area: ['0', [forms_1.Validators.required]],
+            Reference: ['', [forms_1.Validators.required]],
+            Phone_No1: ['', [forms_1.Validators.required]],
+            Phone_No2: ['', [forms_1.Validators.required]],
+            Skill: ['', [forms_1.Validators.required]]
+        });
+        this.subcribeToFormChanges();
     }
-    UserRegistrationComponent.prototype.onSubmitTemplateBased = function () {
+    UserRegistrationComponent.prototype.subcribeToFormChanges = function () {
         var _this = this;
-        var user = JSON.stringify({ Name: this.Name, Email: this.Email, Dob: this.Dob, Sex: this.Sex, work: this.work, Area: this.Area, C_Area: this.C_Area, Reference: this.Reference, Pho1: this.Pho1, Pho2: this.Pho2, Skill: this.Skill });
-        this.rr.registerUser(user).subscribe(function (data) { return _this.message = {}; }, // put the data returned from the server in our variable
-        function (// put the data returned from the server in our variable
-            error) { return console.log("Error HTTP Post Service"); }, // in case of failure show this message
-        function () { return console.log("Job Done Post !"); } //run this code in all cases
-         //run this code in all cases
-        );
+        var myFormStatusChanges$ = this.myForm.statusChanges;
+        var myFormValueChanges$ = this.myForm.valueChanges;
+        myFormStatusChanges$.subscribe(function (x) { return _this.events.push({ event: 'STATUS_CHANGED', object: x }); });
+        myFormValueChanges$.subscribe(function (x) { return _this.events.push({ event: 'VALUE_CHANGED', object: x }); });
+    };
+    UserRegistrationComponent.prototype.onSubmit = function (model, isValid) {
+        var _this = this;
+        var user = JSON.stringify(model);
+        if (isValid) {
+            this.rr.registerUser(user).subscribe(function (data) { return _this.message = data.flag; }, // put the data returned from the server in our variable
+            function (// put the data returned from the server in our variable
+                error) { return console.log("Error HTTP Post Service"); }, // in case of failure show this message
+            function () { return console.log("Job Done Post !"); } //run this code in all cases
+             //run this code in all cases
+            );
+        }
+        else {
+            this.submitted = true;
+        }
+    };
+    /*
+    validation fuctions
+    
+    */
+    UserRegistrationComponent.mailFormat = function (control) {
+        var EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
+        if (control.value != "" && (control.value.length <= 5 || !EMAIL_REGEXP.test(control.value))) {
+            return { "incorrectMailFormat": true };
+        }
+        return null;
     };
     UserRegistrationComponent = __decorate([
         core_1.Component({
             selector: 'register-user',
             providers: [user_reg_service_1.UserRegistrationService],
-            directives: [common_1.CORE_DIRECTIVES, forms_1.FORM_DIRECTIVES, forms_2.NgModel, common_1.NgIf],
+            directives: [forms_1.REACTIVE_FORM_DIRECTIVES],
             templateUrl: './client_side/app/user_registration/user.html',
             styleUrls: ['client_side/app/user_registration/user_reg.component.css']
         }), 
-        __metadata('design:paramtypes', [user_reg_service_1.UserRegistrationService])
+        __metadata('design:paramtypes', [user_reg_service_1.UserRegistrationService, forms_1.FormBuilder])
     ], UserRegistrationComponent);
     return UserRegistrationComponent;
 }());
