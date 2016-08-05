@@ -24,7 +24,7 @@
                   <span class="glyphicon glyphicon-envelope"></span>
                 <input type="text" class="form-control input-lg" formControlName="Email" placeholder="Email Address" />
                   </div>
-                  <label>&nbsp;</label><em [hidden]="myForm.controls.Email.valid || (myForm.controls.Email.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>Name is required!(minimum 5 character)</em>
+                  <label>&nbsp;</label><em [hidden]="myForm.controls.Email.valid || (myForm.controls.Email.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
                   </div>
                   
                   <div class="form-group">
@@ -32,7 +32,7 @@
                   <span class="glyphicon glyphicon-calendar"></span>
                   <input type="text" class="form-control input-lg" formControlName="Dob" placeholder="Date of Birth" onfocus="(this.type='date')" />
                   </div>
-                  <label>&nbsp;</label>
+                  <label>&nbsp;</label><em [hidden]="myForm.controls.Dob.valid || (myForm.controls.Dob.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
                   </div>
 
                  
@@ -47,7 +47,7 @@
                   <input type="radio"  name="Sex" class="big" value="Female" formControlName="Sex" >
                   <strong> Female </strong>
                   </label>
-                  <label>&nbsp;</label>
+                  <label>&nbsp;</label><em [hidden]="myForm.controls.Sex.valid || (myForm.controls.Sex.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
                   </div>
                   <br>
              </div>
@@ -55,10 +55,10 @@
 
                   <div class="form-group">
                   <div class="inner-addon left-addon">
-                  <span class="glyphicon glyphicon-calendar"></span>
+                  <span class="glyphicon glyphicon-briefcase"></span>
                   <input type="text" class="form-control input-lg" formControlName="Work" placeholder="Work"  />
                   </div>
-                  <label>&nbsp;</label>
+                  <label>&nbsp;</label><em [hidden]="myForm.controls.Work.valid || (myForm.controls.Work.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
                   </div>
 
                   <div class="form-group">
@@ -69,7 +69,7 @@
                    <option *ngFor="let p of area" [value]="p">{{p}}</option>
                    </select>
                    </div>
-                   <label>&nbsp;</label>
+                   <label>&nbsp;</label><em [hidden]="(myForm.controls.Area.value != '0' ) || ((myForm.controls.Area.value == '0' ) && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
                    </div>
 
                    <div class="form-group">
@@ -80,7 +80,7 @@
                    <option *ngFor="let p of area" [value]="p">{{p}}</option>
                    </select>
                    </div>
-                   <label>&nbsp;</label>
+                   <label>&nbsp;</label><em [hidden]="(myForm.controls.C_Area.value != '0' ) || ((myForm.controls.C_Area.value == '0' ) && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
                    </div>
 
                   <div class="form-group">
@@ -88,7 +88,7 @@
                   <span class="glyphicon glyphicon-tag"></span>
                   <input type="text" class="form-control input-lg"  formControlName="Reference" name="Reference" placeholder="Reference.(Who gave reference)">
                   </div>
-                  <label>&nbsp;</label>
+                  <label>&nbsp;</label><em [hidden]="myForm.controls.Reference.valid || (myForm.controls.Reference.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
                   </div>
              </div>
 
@@ -99,7 +99,7 @@
                   <span class="glyphicon glyphicon-phone"></span>
                   <input type="text" formControlName="Phone_No1" name="Pno1" class="form-control input-lg" placeholder="Phone_Number1">
                   </div>
-                  <label>&nbsp;</label>
+                  <label>&nbsp;</label><em [hidden]="myForm.controls.Phone_No1.valid || (myForm.controls.Phone_No1.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
                   </div>
 
                   <div class="form-group">
@@ -107,7 +107,7 @@
                   <span class="glyphicon glyphicon-phone"></span>
                   <input type="text" formControlName="Phone_No2" name="Pno2" class="form-control input-lg" placeholder="Phone_Number2">
                   </div>
-                  <label>&nbsp;</label>
+                  <label>&nbsp;</label><em [hidden]="myForm.controls.Phone_No2.valid || (myForm.controls.Phone_No2.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
                   </div>
 
                   <div class="form-group">
@@ -115,7 +115,7 @@
                   <span class="glyphicon glyphicon-book"></span>
                   <input type="text" formControlName="Skill" name="Skill" class="form-control input-lg" placeholder="Skill_set">
                   </div>
-                  <label>&nbsp;</label>
+                  <label>&nbsp;</label><em [hidden]="myForm.controls.Skill.valid || (myForm.controls.Skill.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
                   </div>
             </div>
 

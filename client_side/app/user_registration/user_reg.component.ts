@@ -90,6 +90,7 @@ constructor(private rr:UserRegistrationService,private builder: FormBuilder) {
 
   onSubmit(model: user, isValid: boolean) {
 
+       console.log(model);
        
       let user = JSON.stringify(model);
       
