@@ -14,7 +14,7 @@ var Rx_1 = require('rxjs/Rx');
 require('rxjs/add/operator/map');
 var UserRegistrationService = (function () {
     function UserRegistrationService(http) {
-        this.API_URL = 'http://localhost:8080/user';
+        this.API_URL = 'http://localhost:8080/user_reg';
         this.http = http;
     }
     UserRegistrationService.prototype.registerUser = function (user) {
