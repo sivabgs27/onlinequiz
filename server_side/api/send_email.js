@@ -7,7 +7,7 @@ module.exports.sendemail = function(name, toaddr, link){
 
 console.log('came into send email method:');
         // create reusable transporter object using the default SMTP transport
-    var transporter = nodemailer.createTransport('smtps://sivascse%40gmail.com:banumathy27@smtp.gmail.com');
+    var transporter = nodemailer.createTransport('smtps://giridharangulf%40gmail.com:engineergiri@smtp.gmail.com');
 
 
         // setup e-mail data with unicode symbols
