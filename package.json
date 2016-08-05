@@ -41,6 +41,7 @@
     "core-js": "^2.4.0",
     "cors": "^2.7.1",
     "csvtojson": "^1.0.0",
+    "emailjs": "^1.0.5",
     "express": "^4.14.0",
     "moment": "^2.14.1",
     "mongodb": "^2.2.5",
