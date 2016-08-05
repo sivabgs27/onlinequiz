@@ -9,7 +9,9 @@ import 'rxjs/add/operator/map';
 
 export class UserRegistrationService {
  http:Http;
- API_URL: string = 'http://localhost:3000/user';
+
+ API_URL: string = 'http://localhost:8080/user_reg';
+
  constructor(http:Http)
  {
    this.http=http;
