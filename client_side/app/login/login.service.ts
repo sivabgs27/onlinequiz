@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 
 export class LoginService {
  http:Http;
- API_URL: string = 'http://localhost:3000/user_login';
+ API_URL: string = 'http://104.237.131.101:3000/user_login';
  constructor(http:Http)
  {
    this.http=http;

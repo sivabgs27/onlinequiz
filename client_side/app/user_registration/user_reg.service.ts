@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 
 export class UserRegistrationService {
  http:Http;
- API_URL: string = 'http://localhost:8080/user_reg';
+ API_URL: string = 'http://104.237.131.101:8080/user_reg';
  constructor(http:Http)
  {
    this.http=http;

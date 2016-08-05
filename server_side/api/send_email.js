@@ -13,8 +13,8 @@ module.exports.sendemail = function(name, toaddr, link){
     var mailOptions = {
         from: '"Online Quiz " <info@nsqat.com>', // sender address
         to: toaddr, // list of receivers
-        subject: 'Hello ✔', // Subject line
-        text: 'Hello world 🐴', // plaintext body
+        subject: 'Online Quiz Registration....', // Subject line
+        text: 'Hello :-)', // plaintext body
         html: `<b>Hello `+name+`</b>
                 <br>=================<br>
                 Please create Password for OnlineQuiz <a href="`+link+`">HERE</a>
