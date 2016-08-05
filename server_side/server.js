@@ -3,7 +3,7 @@ const express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var mongoDB = require('mongoose');
-const port = 8080;
+const port = 8081;
 
 //connect to Database 
 mongoDB.connect('mongodb://localhost/onlinequiz',function(err){
