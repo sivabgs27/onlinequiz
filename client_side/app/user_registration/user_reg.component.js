@@ -46,6 +46,7 @@ var UserRegistrationComponent = (function () {
     UserRegistrationComponent.prototype.onSubmit = function (model, isValid) {
         var _this = this;
         console.log(model);
+        this.guser = model;
         var user = JSON.stringify(model);
         if (isValid) {
             this.rr.registerUser(user).subscribe(function (data) { return _this.message = data.flag; }, // put the data returned from the server in our variable

@@ -82,7 +82,7 @@ constructor(private rr:UserRegistrationService,private builder: FormBuilder) {
 
   area = ['Doha','Test'];
 
-    
+    guser:user;
  
  
   message:String;
@@ -102,6 +102,7 @@ constructor(private rr:UserRegistrationService,private builder: FormBuilder) {
   onSubmit(model: user, isValid: boolean) {
 
        console.log(model);
+       this.guser=model;
        
       let user = JSON.stringify(model);
       
