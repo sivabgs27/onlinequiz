@@ -1,0 +1,32 @@
+<div class="test">
+    <h3> Sign in</h3>
+    <div [hidden]="showerr" style="color:#a50e0e" >
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+     Invalid Email Address or Password 
+   </div>
+   <div [hidden]="showser_err" style="color:#a50e0e" >
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+     You Entered Email Address and Password does not match
+   </div>
+
+
+     <form [formGroup]="loginForm" novalidate (ngSubmit)="login(loginForm.value,loginForm.valid)">
+
+    <div class="form-group">
+    <div class="inner-addon left-addon">
+      <span class="glyphicon glyphicon-user"></span>
+      <input type="text" class="form-control" formControlName="Email" placeholder="Email address" />
+    </div>
+    </div>
+    
+    <div class="form-group">
+    <div class="inner-addon left-addon">
+      <span class="glyphicon glyphicon-lock"></span>
+       <input type="password" class="form-control" formControlName="Password" placeholder="Password"/>
+    </div>
+    </div>
+       
+
+       <button type="submit" class="btn btn-primary btn-lg btn-block" >Login</button>
+       </form>  
+</div>    

@@ -22,6 +22,10 @@ app.post('/user_reg', function (req, res) {
   lib.user_reg.store(req.body);
   res.send(req.body);
 });
+app.post('/user_login', function (req, res) {
+ res.setHeader('Content-Type', 'application/json');
+ res.send(JSON.stringify({ flag: true }));
+});
 app.get('/new_userpass/:email/:key',function(req,res){
   res.send(lib.setpassword.html(req.params.email,req.params.key));
 });
@@ -29,6 +33,7 @@ app.post('/set_userpass/:email/:key',function(req,res){
   res.send(lib.pass_reg.store(req.params.key,req.body.password));
   console.log(req.body.password);
 });
+
 
 app.listen(port);
 console.log('Running ---  on: '+port);
