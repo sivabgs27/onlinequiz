@@ -14,7 +14,7 @@ var Rx_1 = require('rxjs/Rx');
 require('rxjs/add/operator/map');
 var UserRegistrationService = (function () {
     function UserRegistrationService(http) {
-        this.API_URL = 'http://104.237.131.101:8081/user_reg';
+        this.API_URL = 'http://localhost:8080/user_reg';
         this.http = http;
     }
     UserRegistrationService.prototype.registerUser = function (user) {
@@ -22,7 +22,6 @@ var UserRegistrationService = (function () {
         //console.log("Testing post data....."+data);
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        headers.append('Access-Control-Allow-Origin', '*');
         var options = new http_1.RequestOptions({ headers: headers, method: "post" });
         return this.http.post(this.API_URL, user, options)
             .map(function (res) { return res.json(); })

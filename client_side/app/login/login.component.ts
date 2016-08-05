@@ -52,10 +52,7 @@ login(c:cred,isValid: boolean)
                 error => console.log("Error HTTP Post Service"), // in case of failure show this message
                 () => console.log("Job Done Post !")//run this code in all cases
             ); 
-         
              console.log(this.dat)
-
-
           if(false)
           {
              // this.showser_err=true;
@@ -70,7 +67,6 @@ login(c:cred,isValid: boolean)
     
 
      this.showerr=false;
-     this.showser_err=true;
      
     }
     

@@ -9,7 +9,11 @@ import 'rxjs/add/operator/map';
 
 export class UserRegistrationService {
  http:Http;
- API_URL: string = 'http://104.237.131.101:8081/user_reg';
+
+
+ API_URL: string = 'http://localhost:8080/user_reg';
+
+
  constructor(http:Http)
  {
    this.http=http;
@@ -20,7 +24,7 @@ export class UserRegistrationService {
 
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    headers.append('Access-Control-Allow-Origin', '*');
+   
 
     let options = new RequestOptions({ headers: headers, method: "post" });
    return this.http.post(this.API_URL, user,options)
@@ -32,5 +36,7 @@ export class UserRegistrationService {
         console.error(error);
         return Observable.throw(error.json().error || ' error');
     }
+
+    
 
 }

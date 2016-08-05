@@ -15,6 +15,7 @@ import { NavBarComponent} from './nav_bar/nav_bar.component';
 
   </div>
   `
+
 })
 export class AppComponent {
  

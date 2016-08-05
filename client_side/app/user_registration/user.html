@@ -1,141 +1,148 @@
 <div *ngIf="showForm">
-    <div class="container-fluid">
-      
+<div class="container-fluid">
+  
 
-      <h2 class="text-center login-title">User Registration</h2>
-                  
-                  
-        <form #f="ngForm" (ngSubmit)="onSubmitTemplateBased()">
+   <h2 class="text-center login-title">User Registration</h2>
+   <br>
+               
+              
+     <form [formGroup]="myForm" novalidate (ngSubmit)="onSubmit(myForm.value, myForm.valid)">
 
-            <div class="row">
+         <div class="row">
 
-                <div class="col-sm-6 col-md-4">
+            <div class="col-sm-6 col-md-4">
 
-                      <div class="form-group">
-                      <label [hidden]="!Name" for="name">Name</label>
-                      <label [hidden]="Name" for="name">&nbsp;</label>
-                      <input type="text" [(ngModel)]="Name" name="Name" class="form-control input-lg" placeholder="Name" pattern=".{4,}" title="4 or more characters" required>
-                      </div>
-
-                      <div class="form-group">
-                      <label for="email" [hidden]="!Email">Email Address</label>
-                      <label for="email" [hidden]="Email">&nbsp;</label>
-                      <input type="email" [(ngModel)]="Email" name="Email" class="form-control input-lg" placeholder="Email" required>
-                      </div>
-                      
-                      <div class="form-group">
-                      <label [hidden]="!Dob" for="dob">Date of Birth</label>
-                      <label [hidden]="Dob" for="dob">&nbsp;</label>
-                    <input type="text" [(ngModel)]="Dob" name="Dob" class="form-control input-lg" placeholder="Date of Birth" onfocus="(this.type='date')" required>
-                      </div>
-
-                      <br>
-
-                      <div class="form-group">
-      
-                      <label for="sex" class="checkbox-inline "> 
-                      <input type="radio" class="big" name="Sex" value="Male" [(ngModel)]="Sex" required> 
-                      <strong> Male </strong>
-                      </label>
-                  
-                      <label for="sex" class="checkbox-inline">
-                      <input type="radio"  name="Sex" class="big" value="Female" [(ngModel)]="Sex" required >
-                      <strong> Female </strong>
-                    </label>
-          
-                      </div>
-
-              </div>
-              <div class="col-sm-6 col-md-4">
-
-                      <div class="form-group">
-                      <label for="work" [hidden]="!work">Work</label>
-                      <label for="work" [hidden]="work">&nbsp;</label>
-                      <input type="text" [(ngModel)]="work" name="Work" class="form-control input-lg" placeholder="Work" required>
-                      </div>
-
-                    <div class="form-group">
-                      <label for="Area" [hidden]="Area == '0'">Area</label>
-                        <label for="Area" [hidden]="Area != '0'">&nbsp;</label>
-                        <select class="form-control input-lg" required [(ngModel)]="Area" name="Area" >
-                          <option [disabled]="true" [value]="0">Area</option>
-                      <option *ngFor="let p of area" [value]="p">{{p}}</option>
-                      </select>
-                      </div>
-
-                      <div class="form-group">
-                      <label for="cArea" [hidden]="C_Area == '0'">Current living Area</label>
-                      <label for="cArea" [hidden]="C_Area != '0'">&nbsp;</label>
-                        <select class="form-control input-lg" required [(ngModel)]="C_Area" name="C_Area">
-                      <option [disabled]="true" [value]="0">Current living Area</option>
-                      <option *ngFor="let p of area" [value]="p">{{p}}</option>
-                      </select>
-                      </div>
-
-                      <div class="form-group">
-                      <label for="Reference" [hidden]="!Reference">Reference. ( Who gave reference)</label>
-                      <label for="Reference" [hidden]="Reference">&nbsp;</label>
-                      <input type="text" class="form-control input-lg" required [(ngModel)]="Reference" name="Reference" placeholder="Reference. ( Who gave reference)">
-                      </div>
-
-                    </div>
-
-                    <div class="col-sm-6 col-md-4">
-
-                      <div class="form-group">
-                      <label for="pno1" [hidden]="!Pno1">Phone_number1</label>
-                      <label for="pno1" [hidden]="Pno1">&nbsp;</label>
-                      <input type="text" [(ngModel)]="Pno1" name="pno1" class="form-control input-lg" placeholder="Phone_Number1" required>
-                      </div>
-
-                      <div class="form-group">
-                      <label for="pno1" [hidden]="!Pno2">Phone_number2</label>
-                      <label for="pno1" [hidden]="Pno2">&nbsp;</label>
-                      <input type="text" [(ngModel)]="Pno2" name="pno2" class="form-control input-lg" placeholder="Phone_Number2" required>
-                      </div>
-
-                      <div class="form-group">
-                      <label for="pno1" [hidden]="!Skill">Skill_set</label>
-                      <label for="pno1" [hidden]="Skill">&nbsp;</label>
-                      <input type="text" [(ngModel)]="Skill" name="skill" class="form-control input-lg" placeholder="Skill_set" required>
-                      </div>
-
-        
-
+                 <div class="form-group">
+                  <div class="inner-addon left-addon">
+                  <span class="glyphicon glyphicon-user"></span>
+                  <input type="text" class="form-control input-lg" formControlName="Name" name="Name" placeholder="Name" />
+                  </div>
+                  <label>&nbsp;</label> <em [hidden]="myForm.controls.Name.valid || (myForm.controls.Name.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>Name is required!(minimum 5 character)</em>
                   </div>
 
-              </div> 
-                      <br>
-                      <br>
-
-                      <div class="row">
-
-                      <div class="col-sm-6 col-md-4">
-                      </div>
-
-                      <div class="col-sm-6 col-md-4 center-block">
-                      <button type="submit" class="btn btn-primary btn-lg btn-block" >Register</button>
-                      </div>
-                      
-
-                      <div class="col-sm-6 col-md-4">
-                      </div>
-
-                      </div>
-
+                  <div class="form-group">
+                  <div class="inner-addon left-addon">
+                  <span class="glyphicon glyphicon-envelope"></span>
+                <input type="text" class="form-control input-lg" formControlName="Email" placeholder="Email Address" />
+                  </div>
+                  <label>&nbsp;</label><em [hidden]="myForm.controls.Email.valid || (myForm.controls.Email.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
+                  </div>
                   
+                  <div class="form-group">
+                  <div class="inner-addon left-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+                  <input type="text" class="form-control input-lg" formControlName="Dob" placeholder="Date of Birth" onfocus="(this.type='date')" />
+                  </div>
+                  <label>&nbsp;</label><em [hidden]="myForm.controls.Dob.valid || (myForm.controls.Dob.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
+                  </div>
+
+                 
+
+                  <div class="form-group">
+                  <label for="sex" class="checkbox-inline "> 
+                  <input type="radio" class="big" name="Sex" value="Male" formControlName="Sex"> 
+                  <strong> Male </strong>
+                  </label>
+              
+                  <label for="sex" class="checkbox-inline">
+                  <input type="radio"  name="Sex" class="big" value="Female" formControlName="Sex" >
+                  <strong> Female </strong>
+                  </label>
+                  <label>&nbsp;</label><em [hidden]="myForm.controls.Sex.valid || (myForm.controls.Sex.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
+                  </div>
+                  <br>
+             </div>
+           <div class="col-sm-6 col-md-4">
+
+                  <div class="form-group">
+                  <div class="inner-addon left-addon">
+                  <span class="glyphicon glyphicon-briefcase"></span>
+                  <input type="text" class="form-control input-lg" formControlName="Work" placeholder="Work"  />
+                  </div>
+                  <label>&nbsp;</label><em [hidden]="myForm.controls.Work.valid || (myForm.controls.Work.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
+                  </div>
+
+                  <div class="form-group">
+                   <div class="inner-addon left-addon">
+                   <span class="glyphicon glyphicon-globe"></span>
+                   <select class="form-control input-lg" formControlName="Area" name="Area" >
+                   <option [disabled]="true" [value]="0">Area</option>
+                   <option *ngFor="let p of area" [value]="p">{{p}}</option>
+                   </select>
+                   </div>
+                   <label>&nbsp;</label><em [hidden]="(myForm.controls.Area.value != '0' ) || ((myForm.controls.Area.value == '0' ) && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
+                   </div>
+
+                   <div class="form-group">
+                   <div class="inner-addon left-addon">
+                   <span class="glyphicon glyphicon-home"></span>
+                   <select class="form-control input-lg"  formControlName="C_Area" name="C_Area">
+                   <option [disabled]="true" [value]="0">Current living Area</option>
+                   <option *ngFor="let p of area" [value]="p">{{p}}</option>
+                   </select>
+                   </div>
+                   <label>&nbsp;</label><em [hidden]="(myForm.controls.C_Area.value != '0' ) || ((myForm.controls.C_Area.value == '0' ) && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
+                   </div>
+
+                  <div class="form-group">
+                  <div class="inner-addon left-addon">
+                  <span class="glyphicon glyphicon-tag"></span>
+                  <input type="text" class="form-control input-lg"  formControlName="Reference" name="Reference" placeholder="Reference.(Who gave reference)">
+                  </div>
+                  <label>&nbsp;</label><em [hidden]="myForm.controls.Reference.valid || (myForm.controls.Reference.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
+                  </div>
+             </div>
+
+              <div class="col-sm-6 col-md-4">
+
+                  <div class="form-group">
+                  <div class="inner-addon left-addon">
+                  <span class="glyphicon glyphicon-phone"></span>
+                  <input type="text" formControlName="Phone_No1" name="Pno1" class="form-control input-lg" placeholder="Phone_Number1">
+                  </div>
+                  <label>&nbsp;</label><em [hidden]="myForm.controls.Phone_No1.valid || (myForm.controls.Phone_No1.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
+                  </div>
+
+                  <div class="form-group">
+                  <div class="inner-addon left-addon">
+                  <span class="glyphicon glyphicon-phone"></span>
+                  <input type="text" formControlName="Phone_No2" name="Pno2" class="form-control input-lg" placeholder="Phone_Number2">
+                  </div>
+                  <label>&nbsp;</label><em [hidden]="myForm.controls.Phone_No2.valid || (myForm.controls.Phone_No2.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
+                  </div>
+
+                  <div class="form-group">
+                  <div class="inner-addon left-addon">
+                  <span class="glyphicon glyphicon-book"></span>
+                  <input type="text" formControlName="Skill" name="Skill" class="form-control input-lg" placeholder="Skill_set">
+                  </div>
+                  <label>&nbsp;</label><em [hidden]="myForm.controls.Skill.valid || (myForm.controls.Skill.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
+                  </div>
+            </div>
+
+           </div> 
+                  
+                
+
+                  <div class="row">
+                  <div class="btnpadd">
+                   <button type="submit" class="btn btn-primary btn-lg btn-block" >Register</button>
+                  </div> 
+                  </div>
+
+                 
                       
 
                     </form>
                     
             </div>
-
-
 </div>
+
+
 <div *ngIf="!showForm">
   <div class="container-fluid">
     <h2 class="text-center login-title">
-      An Email Confirmation has been sent to {{Email}} , Please follow the link provided and create you password. <br><br>
+      An Email Confirmation has been sent to {{guser.Email}} , Please follow the link provided and create you password. <br><br>
       Once done with that, <a [routerLink]="['/login']">Login here to Continue</a>
     </h2>
   </div>
