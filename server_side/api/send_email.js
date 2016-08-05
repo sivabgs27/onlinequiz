@@ -5,6 +5,7 @@ var nodemailer = require('nodemailer');
 // send mail with defined transport object
 module.exports.sendemail = function(name, toaddr, link){
 
+console.log('came into send email method:');
         // create reusable transporter object using the default SMTP transport
     var transporter = nodemailer.createTransport('smtps://sivascse%40gmail.com:banumathy27@smtp.gmail.com');
 
@@ -23,7 +24,7 @@ module.exports.sendemail = function(name, toaddr, link){
 
     transporter.sendMail(mailOptions, function(error, info){
         if(error){
-            return console.log(error);
+            return console.log('Email ------------- '+error);
         }
         console.log('Message sent: ' + info.response);
     });
