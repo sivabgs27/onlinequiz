@@ -3,8 +3,10 @@ import { AppComponent } from './app.component';
 import {enableProdMode} from '@angular/core';
 import {provideForms, disableDeprecatedForms} from '@angular/forms';
 import { HTTP_PROVIDERS } from '@angular/http';
+import { appRouterProviders } from './app.routes';
+
 import 'rxjs/Rx';
 
 enableProdMode();
 
-bootstrap(AppComponent, [disableDeprecatedForms(), provideForms(),HTTP_PROVIDERS] );
+bootstrap(AppComponent, [disableDeprecatedForms(), provideForms(),HTTP_PROVIDERS, appRouterProviders] );

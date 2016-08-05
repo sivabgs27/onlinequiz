@@ -13,12 +13,14 @@ var common_1 = require('@angular/common');
 var forms_1 = require('@angular/forms');
 var forms_2 = require('@angular/forms');
 var user_reg_service_1 = require('./user_reg.service');
+var router_1 = require('@angular/router');
 /**
  * UserDetails
  */
 var UserRegistrationComponent = (function () {
     function UserRegistrationComponent(rr) {
         this.rr = rr;
+        this.showForm = true;
         this.dt = new Date();
         this.message = {};
         this.area = ['Doha', 'Test'];
@@ -34,12 +36,13 @@ var UserRegistrationComponent = (function () {
         function () { return console.log("Job Done Post !"); } //run this code in all cases
          //run this code in all cases
         );
+        this.showForm = false;
     };
     UserRegistrationComponent = __decorate([
         core_1.Component({
             selector: 'register-user',
             providers: [user_reg_service_1.UserRegistrationService],
-            directives: [common_1.CORE_DIRECTIVES, forms_1.FORM_DIRECTIVES, forms_2.NgModel, common_1.NgIf],
+            directives: [common_1.CORE_DIRECTIVES, forms_1.FORM_DIRECTIVES, forms_2.NgModel, common_1.NgIf, router_1.ROUTER_DIRECTIVES],
             templateUrl: './client_side/app/user_registration/user.html',
             styleUrls: ['client_side/app/user_registration/user_reg.component.css']
         }), 

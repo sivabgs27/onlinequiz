@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var NavBarComponent = (function () {
     function NavBarComponent() {
         this.snav_w = '0px';
@@ -26,7 +27,8 @@ var NavBarComponent = (function () {
         core_1.Component({
             selector: 'nav-bar',
             templateUrl: './client_side/app/nav_bar/nav_bar.html',
-            styleUrls: ['./client_side/app/nav_bar/nav_bar.component.css']
+            styleUrls: ['./client_side/app/nav_bar/nav_bar.component.css'],
+            directives: [router_1.ROUTER_DIRECTIVES]
         }), 
         __metadata('design:paramtypes', [])
     ], NavBarComponent);

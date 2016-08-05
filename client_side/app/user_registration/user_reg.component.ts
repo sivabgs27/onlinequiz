@@ -7,18 +7,18 @@ import {DATEPICKER_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
 import { NgForm }    from '@angular/forms';
 
 import { UserRegistrationService } from './user_reg.service';
-
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 /**
  * UserDetails
  */
-  
+
 
 
 @Component({
     selector: 'register-user',
     providers: [UserRegistrationService],
-    directives: [CORE_DIRECTIVES, FORM_DIRECTIVES,NgModel,NgIf],
+    directives: [CORE_DIRECTIVES, FORM_DIRECTIVES,NgModel,NgIf,ROUTER_DIRECTIVES],
     templateUrl:'./client_side/app/user_registration/user.html',
     styleUrls:['client_side/app/user_registration/user_reg.component.css']
                                                                    
@@ -26,10 +26,12 @@ import { UserRegistrationService } from './user_reg.service';
 
 export class UserRegistrationComponent{
   
+  showForm: boolean = true;
   
 constructor(private rr:UserRegistrationService) {
     
     
+
 }
 
   public dt:Date = new Date();
@@ -37,6 +39,7 @@ constructor(private rr:UserRegistrationService) {
   message: Object={};
   area = ['Doha','Test'];
 
+    
  
   Name:string;
   Email:string;
@@ -62,6 +65,8 @@ constructor(private rr:UserRegistrationService) {
                 error => console.log("Error HTTP Post Service"), // in case of failure show this message
                 () => console.log("Job Done Post !")//run this code in all cases
             );
+
+        this.showForm=false;
     }
 
    
