@@ -9,14 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var common_1 = require('@angular/common');
 var forms_1 = require('@angular/forms');
 var user_reg_service_1 = require('./user_reg.service');
+var router_1 = require('@angular/router');
 var UserRegistrationComponent = (function () {
     function UserRegistrationComponent(rr, builder) {
         this.rr = rr;
         this.builder = builder;
         this.submitted = false;
         this.events = [];
+        this.showForm = true;
         this.area = ['Doha', 'Test'];
         this.myForm = this.builder.group({
             Name: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.minLength(5)])],
@@ -51,6 +54,7 @@ var UserRegistrationComponent = (function () {
             function () { return console.log("Job Done Post !"); } //run this code in all cases
              //run this code in all cases
             );
+            this.showForm = false;
         }
         else {
             this.submitted = true;
@@ -71,7 +75,7 @@ var UserRegistrationComponent = (function () {
         core_1.Component({
             selector: 'register-user',
             providers: [user_reg_service_1.UserRegistrationService],
-            directives: [forms_1.REACTIVE_FORM_DIRECTIVES],
+            directives: [common_1.CORE_DIRECTIVES, forms_1.REACTIVE_FORM_DIRECTIVES, common_1.NgIf, router_1.ROUTER_DIRECTIVES],
             templateUrl: './client_side/app/user_registration/user.html',
             styleUrls: ['client_side/app/user_registration/user_reg.component.css']
         }), 

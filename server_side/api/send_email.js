@@ -5,6 +5,7 @@ var nodemailer = require('nodemailer');
 // send mail with defined transport object
 module.exports.sendemail = function(name, toaddr, link){
 
+console.log('came into send email method:');
         // create reusable transporter object using the default SMTP transport
     var transporter = nodemailer.createTransport('smtps://giridharangulf%40gmail.com:engineergiri@smtp.gmail.com');
 
@@ -13,8 +14,8 @@ module.exports.sendemail = function(name, toaddr, link){
     var mailOptions = {
         from: '"Online Quiz " <info@nsqat.com>', // sender address
         to: toaddr, // list of receivers
-        subject: 'Hello ✔', // Subject line
-        text: 'Hello world 🐴', // plaintext body
+        subject: 'Online Quiz Registration....', // Subject line
+        text: 'Hello :-)', // plaintext body
         html: `<b>Hello `+name+`</b>
                 <br>=================<br>
                 Please create Password for OnlineQuiz <a href="`+link+`">HERE</a>
@@ -23,7 +24,7 @@ module.exports.sendemail = function(name, toaddr, link){
 
     transporter.sendMail(mailOptions, function(error, info){
         if(error){
-            return console.log(error);
+            return console.log('Email ------------- '+error);
         }
         console.log('Message sent: ' + info.response);
     });

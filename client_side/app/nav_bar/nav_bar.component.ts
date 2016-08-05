@@ -1,12 +1,14 @@
 import { Component, } from '@angular/core';
 import {NgStyle} from '@angular/common';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 
 
 @Component({
     selector: 'nav-bar',
     templateUrl:'./client_side/app/nav_bar/nav_bar.html',
-    styleUrls:['./client_side/app/nav_bar/nav_bar.component.css']
+    styleUrls:['./client_side/app/nav_bar/nav_bar.component.css'],
+    directives: [ROUTER_DIRECTIVES]
                                                                    
 })
 export class NavBarComponent

@@ -9,17 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var user_reg_component_1 = require('./user_registration/user_reg.component');
 var nav_bar_component_1 = require('./nav_bar/nav_bar.component');
-var login_component_1 = require('./login/login.component');
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            directives: [user_reg_component_1.UserRegistrationComponent, nav_bar_component_1.NavBarComponent, login_component_1.LoginComponent],
-            template: '<div><nav-bar></nav-bar> <register-user></register-user></div>'
+            directives: [nav_bar_component_1.NavBarComponent],
+            template: "\n  <div>\n    \n    <nav-bar></nav-bar>\n    \n\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

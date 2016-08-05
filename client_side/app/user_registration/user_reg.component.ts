@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
-import { Control } from '@angular/common';
+import { Control,CORE_DIRECTIVES,NgIf } from '@angular/common';
 import { REACTIVE_FORM_DIRECTIVES, FormGroup, FormControl, FormBuilder,Validators} from '@angular/forms';
 import { UserRegistrationService } from './user_reg.service';
 
-
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 
 /**
  * UserDetails
  */
+
 export interface user{
 
   Name:string;
@@ -31,10 +32,13 @@ interface ValidationResult {
 }  
 
 
+
 @Component({
     selector: 'register-user',
     providers: [UserRegistrationService],
-    directives: [REACTIVE_FORM_DIRECTIVES],
+
+    directives: [CORE_DIRECTIVES, REACTIVE_FORM_DIRECTIVES,NgIf,ROUTER_DIRECTIVES],
+
     templateUrl:'./client_side/app/user_registration/user.html',
     styleUrls:['client_side/app/user_registration/user_reg.component.css']
                                                                    
@@ -44,14 +48,19 @@ interface ValidationResult {
 
 export class UserRegistrationComponent {
   
+
    public myForm: FormGroup;
    public submitted: boolean=false;
    public events: any[] = [];
    
+
+  showForm: boolean = true;
+
   
   
 constructor(private rr:UserRegistrationService,private builder: FormBuilder) {
     
+
      this.myForm = this.builder.group({
              Name: ['', Validators.compose([<any>Validators.required, <any>Validators.minLength(5)])],
              Email:['', Validators.compose([<any>Validators.required,<any>Validators.minLength(5)])],
@@ -67,11 +76,13 @@ constructor(private rr:UserRegistrationService,private builder: FormBuilder) {
              
         });
         this.subcribeToFormChanges();
+
 }
 
 
   area = ['Doha','Test'];
 
+    
  
  
   message:String;
@@ -101,12 +112,18 @@ constructor(private rr:UserRegistrationService,private builder: FormBuilder) {
                 error => console.log("Error HTTP Post Service"), // in case of failure show this message
                 () => console.log("Job Done Post !")//run this code in all cases
             );
+              this.showForm=false;
+
         }
         else{
             this.submitted = true;
         }
        
               
+
+
+      
+
     }
 
 /*
