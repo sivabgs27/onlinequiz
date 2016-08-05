@@ -14,7 +14,7 @@ var Rx_1 = require('rxjs/Rx');
 require('rxjs/add/operator/map');
 var LoginService = (function () {
     function LoginService(http) {
-        this.API_URL = 'http://104.237.131.101:3000/user_login';
+        this.API_URL = 'http://104.237.131.101:8081/user_login';
         this.http = http;
     }
     LoginService.prototype.login = function (cred) {
