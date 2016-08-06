@@ -12,9 +12,10 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 var Rx_1 = require('rxjs/Rx');
 require('rxjs/add/operator/map');
+var lib_1 = require('../lib');
 var UserRegistrationService = (function () {
     function UserRegistrationService(http) {
-        this.API_URL = 'http://localhost:8080/user_reg';
+        this.API_URL = 'http://' + lib_1.domain_name + '/user_reg';
         this.http = http;
     }
     UserRegistrationService.prototype.registerUser = function (user) {

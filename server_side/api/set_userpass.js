@@ -1,4 +1,4 @@
-
+var lib = require('../lib_list')
 
 module.exports.html = function(email,id){
 
@@ -11,7 +11,7 @@ return  `
     <h3 align=center>`+email+`</h3>
 <div align="center">
 <div align="center" id="rcorners2">
-    <form action="http://104.237.131.101:8080/set_userpass/`+email+`/`+id+`" onsubmit="return myfunc()" method="post">
+    <form action="`+lib.domain_name+`set_userpass/`+email+`/`+id+`" onsubmit="return myfunc()" method="post">
         
         <span class=pd>Password:</span><input name=password class=pd type="password" id="pass1">
         <span class=pd>Repeat Password:</span><input class=pd type="password" id="pass2">

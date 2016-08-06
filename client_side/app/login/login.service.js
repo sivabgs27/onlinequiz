@@ -12,9 +12,10 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 var Rx_1 = require('rxjs/Rx');
 require('rxjs/add/operator/map');
+var lib_1 = require('../lib');
 var LoginService = (function () {
     function LoginService(http) {
-        this.API_URL = 'http://104.237.131.101:8081/user_login';
+        this.API_URL = 'http://' + lib_1.domain_name + '/user_login';
         this.http = http;
     }
     LoginService.prototype.login = function (cred) {

@@ -3,7 +3,7 @@ import {Http,Response,Headers, RequestOptions,HTTP_PROVIDERS} from '@angular/htt
 import {Observable} from 'rxjs/Rx';
 import {Injector} from '@angular/core'
 import 'rxjs/add/operator/map';
-
+import { domain_name } from '../lib';
 
 @Injectable()
 
@@ -11,7 +11,7 @@ export class UserRegistrationService {
  http:Http;
 
 
- API_URL: string = 'http://localhost:8080/user_reg';
+ API_URL: string = 'http://'+domain_name+'/user_reg';
 
 
  constructor(http:Http)

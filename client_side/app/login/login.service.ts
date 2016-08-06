@@ -3,13 +3,14 @@ import {Http,Response,Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 import {Injector} from '@angular/core'
 import 'rxjs/add/operator/map';
+import { domain_name } from '../lib';
 
 
 @Injectable()
 
 export class LoginService {
  http:Http;
- API_URL: string = 'http://104.237.131.101:8081/user_login';
+ API_URL: string = 'http://'+domain_name+'/user_login';
  constructor(http:Http)
  {
    this.http=http;
