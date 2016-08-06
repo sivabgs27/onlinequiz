@@ -4,6 +4,7 @@ import { NavBarComponent} from './nav_bar/nav_bar.component';
 
 
 
+
 @Component({
   selector: 'my-app',
   directives: [NavBarComponent],
@@ -11,7 +12,7 @@ import { NavBarComponent} from './nav_bar/nav_bar.component';
   <div>
     
     <nav-bar></nav-bar>
-    
+   
 
   </div>
   `
@@ -20,4 +21,4 @@ import { NavBarComponent} from './nav_bar/nav_bar.component';
 export class AppComponent {
  
  }
-  
+ 

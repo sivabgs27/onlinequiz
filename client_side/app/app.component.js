@@ -17,7 +17,7 @@ var AppComponent = (function () {
         core_1.Component({
             selector: 'my-app',
             directives: [nav_bar_component_1.NavBarComponent],
-            template: "\n  <div>\n    \n    <nav-bar></nav-bar>\n    \n\n  </div>\n  "
+            template: "\n  <div>\n    \n    <nav-bar></nav-bar>\n   \n\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

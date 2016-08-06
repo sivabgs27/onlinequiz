@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Validators,Control } from '@angular/common';
 import { REACTIVE_FORM_DIRECTIVES, FormGroup, FormControl, FormBuilder} from '@angular/forms';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 import { LoginService } from './login.service';
 
 
@@ -15,7 +16,7 @@ export interface cred
 @Component({
     selector: 'login',
     providers: [LoginService],
-    directives: [REACTIVE_FORM_DIRECTIVES],
+    directives: [REACTIVE_FORM_DIRECTIVES,ROUTER_DIRECTIVES],
     templateUrl:'./client_side/app/login/login.component.html',
     styleUrls:['client_side/app/login/login.component.css']
                                                                    

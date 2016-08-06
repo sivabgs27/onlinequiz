@@ -12,24 +12,28 @@ var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
 var forms_1 = require('@angular/forms');
 var router_1 = require('@angular/router');
-var login_service_1 = require('./login.service');
-var LoginComponent = (function () {
-    function LoginComponent(rr, builder) {
-        this.rr = rr;
+var forget_password_service_1 = require('./forget_password.service');
+var ForgetPassword = (function () {
+    function ForgetPassword(builder, fg) {
         this.builder = builder;
-        this.events = [];
+        this.fg = fg;
+        this.submitted = false;
         this.showerr = true;
         this.showser_err = true;
-        this.loginForm = this.builder.group({
-            Email: ['', [common_1.Validators.required, common_1.Validators.pattern("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}")]],
-            Password: ['', [common_1.Validators.required]]
+        this.useremail = "";
+        this.events = [];
+        this.bgclr = "#ffffff";
+        this.bdrclr = "#ffffff";
+        this.fgForm = this.builder.group({
+            Fgemail: ['', [common_1.Validators.required, common_1.Validators.pattern("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}")]]
         });
     }
-    LoginComponent.prototype.login = function (c, isValid) {
+    ForgetPassword.prototype.fgpwd = function (m, isValid) {
         var _this = this;
+        console.log(m);
         if (isValid) {
             this.showerr = true;
-            this.rr.login(c).subscribe(function (data) { return _this.dat = JSON.stringify(data); }, // put the data returned from the server in our variable
+            this.fg.reset(m).subscribe(function (data) { return _this.dat = JSON.stringify(data); }, // put the data returned from the server in our variable
             function (// put the data returned from the server in our variable
                 error) { return console.log("Error HTTP Post Service"); }, // in case of failure show this message
             function () { return console.log("Job Done Post !"); } //run this code in all cases
@@ -39,25 +43,29 @@ var LoginComponent = (function () {
             if (false) {
             }
             else {
+                this.bgclr = "#b90808";
+                this.bdrclr = "#b90808";
+                this.useremail = m.Fgemail;
                 this.showser_err = false;
             }
         }
         else {
+            this.bgclr = "#b90808";
+            this.bdrclr = "#b90808";
             this.showerr = false;
         }
-        console.log(c, isValid);
     };
-    LoginComponent = __decorate([
+    ForgetPassword = __decorate([
         core_1.Component({
-            selector: 'login',
-            providers: [login_service_1.LoginService],
+            selector: 'forget-password',
+            providers: [forget_password_service_1.ForgetPasswordService],
             directives: [forms_1.REACTIVE_FORM_DIRECTIVES, router_1.ROUTER_DIRECTIVES],
-            templateUrl: './client_side/app/login/login.component.html',
-            styleUrls: ['client_side/app/login/login.component.css']
+            templateUrl: './client_side/app/forget_password/forget_password.component.html',
+            styleUrls: ['client_side/app/forget_password/forget_password.component.css']
         }), 
-        __metadata('design:paramtypes', [login_service_1.LoginService, forms_1.FormBuilder])
-    ], LoginComponent);
-    return LoginComponent;
+        __metadata('design:paramtypes', [forms_1.FormBuilder, forget_password_service_1.ForgetPasswordService])
+    ], ForgetPassword);
+    return ForgetPassword;
 }());
-exports.LoginComponent = LoginComponent;
-//# sourceMappingURL=login.component.js.map
+exports.ForgetPassword = ForgetPassword;
+//# sourceMappingURL=forget_password.component.js.map
