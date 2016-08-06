@@ -29,14 +29,14 @@ var LoginComponent = (function () {
         var _this = this;
         if (isValid) {
             this.showerr = true;
-            this.rr.login(c).subscribe(function (data) { return _this.dat = JSON.stringify(data); }, // put the data returned from the server in our variable
+            this.rr.login(c).subscribe(function (data) { return _this.dat = data.loggedin; }, // put the data returned from the server in our variable
             function (// put the data returned from the server in our variable
                 error) { return console.log("Error HTTP Post Service"); }, // in case of failure show this message
             function () { return console.log("Job Done Post !"); } //run this code in all cases
              //run this code in all cases
             );
             console.log(this.dat);
-            if (false) {
+            if (this.dat) {
             }
             else {
                 this.showser_err = false;

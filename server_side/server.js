@@ -25,7 +25,11 @@ app.post('/user_reg', function (req, res) {
 });
 app.post('/user_login', function (req, res) {
  res.setHeader('Content-Type', 'application/json');
- res.send(JSON.stringify({ flag: true }));
+ res.send(JSON.stringify({ loggedin: falses }));
+});
+app.post('/reset_password', function (req, res) {
+ res.setHeader('Content-Type', 'application/json');
+ res.send(JSON.stringify({ isEmail: falses }));
 });
 app.get('/new_userpass/:email/:key',function(req,res){
   res.send(lib.setpassword.html(req.params.email,req.params.key));

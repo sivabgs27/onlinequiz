@@ -29,7 +29,8 @@ export class LoginComponent{
    public events: any[] = [];  
    showerr:boolean=true;
    showser_err:boolean=true;
-   private dat:string;
+   private dat:boolean;
+   private userid:string;
 
    constructor(private rr:LoginService,private builder: FormBuilder) {
     
@@ -49,12 +50,12 @@ login(c:cred,isValid: boolean)
        this.showerr=true;
 
       this.rr.login(c).subscribe(
-                data => this.dat = JSON.stringify(data), // put the data returned from the server in our variable
+                data => this.dat = data.loggedin,// put the data returned from the server in our variable
                 error => console.log("Error HTTP Post Service"), // in case of failure show this message
                 () => console.log("Job Done Post !")//run this code in all cases
             ); 
              console.log(this.dat)
-          if(false)
+          if(this.dat)
           {
              // this.showser_err=true;
           } 
