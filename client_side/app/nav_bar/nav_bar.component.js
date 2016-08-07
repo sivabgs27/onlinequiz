@@ -9,6 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var common_1 = require('@angular/common');
 var router_1 = require('@angular/router');
 var NavBarComponent = (function () {
     function NavBarComponent() {
@@ -18,17 +19,19 @@ var NavBarComponent = (function () {
     NavBarComponent.prototype.snav_open = function () {
         this.snav_w = '250px';
         this.btnflag = true;
+        console.log(this.btnflag);
     };
     NavBarComponent.prototype.closeNav = function () {
         this.snav_w = '0px';
         this.btnflag = false;
+        console.log(this.btnflag);
     };
     NavBarComponent = __decorate([
         core_1.Component({
             selector: 'nav-bar',
             templateUrl: './client_side/app/nav_bar/nav_bar.html',
             styleUrls: ['./client_side/app/nav_bar/nav_bar.component.css'],
-            directives: [router_1.ROUTER_DIRECTIVES]
+            directives: [router_1.ROUTER_DIRECTIVES, common_1.NgIf]
         }), 
         __metadata('design:paramtypes', [])
     ], NavBarComponent);

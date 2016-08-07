@@ -29,8 +29,8 @@ export class ForgetPassword{
  dat:string;
  public events: any[] = [];
 
- bgclr="#ffffff";
- bdrclr="#ffffff";  
+ bgclr="#";
+ bdrclr="#";  
 
      constructor(private builder: FormBuilder,private fg:ForgetPasswordService) {
     
@@ -61,8 +61,8 @@ export class ForgetPassword{
           } 
 
           else{
-              this.bgclr="#b90808";
-              this.bdrclr="#b90808";
+              this.bgclr="#rgba(185, 8, 8, 0.57)";
+              this.bdrclr="rgba(185, 8, 8, 0.57)";
               this.useremail=m.Fgemail;
               this.showser_err=false;
               
@@ -70,8 +70,8 @@ export class ForgetPassword{
     }
     else{
         
-     this.bgclr="#b90808";
-     this.bdrclr="#b90808";
+     this.bgclr="rgba(185, 8, 8, 0.57)";
+     this.bdrclr="rgba(185, 8, 8, 0.57)";
 
      this.showerr=false;
      

@@ -22,8 +22,8 @@ var ForgetPassword = (function () {
         this.showser_err = true;
         this.useremail = "";
         this.events = [];
-        this.bgclr = "#ffffff";
-        this.bdrclr = "#ffffff";
+        this.bgclr = "#";
+        this.bdrclr = "#";
         this.fgForm = this.builder.group({
             Fgemail: ['', [common_1.Validators.required, common_1.Validators.pattern("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}")]]
         });
@@ -43,15 +43,15 @@ var ForgetPassword = (function () {
             if (false) {
             }
             else {
-                this.bgclr = "#b90808";
-                this.bdrclr = "#b90808";
+                this.bgclr = "#rgba(185, 8, 8, 0.57)";
+                this.bdrclr = "rgba(185, 8, 8, 0.57)";
                 this.useremail = m.Fgemail;
                 this.showser_err = false;
             }
         }
         else {
-            this.bgclr = "#b90808";
-            this.bdrclr = "#b90808";
+            this.bgclr = "rgba(185, 8, 8, 0.57)";
+            this.bdrclr = "rgba(185, 8, 8, 0.57)";
             this.showerr = false;
         }
     };

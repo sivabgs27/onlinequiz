@@ -12,3 +12,8 @@ body {
 }
 
 
+.bgimg
+{
+
+  background-image: url("images.jpg");
+}

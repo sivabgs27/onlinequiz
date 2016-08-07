@@ -1,5 +1,5 @@
-import { Component, } from '@angular/core';
-import {NgStyle} from '@angular/common';
+import { Component } from '@angular/core';
+import {NgStyle,NgIf} from '@angular/common';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
 
@@ -8,7 +8,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
     selector: 'nav-bar',
     templateUrl:'./client_side/app/nav_bar/nav_bar.html',
     styleUrls:['./client_side/app/nav_bar/nav_bar.component.css'],
-    directives: [ROUTER_DIRECTIVES]
+    directives: [ROUTER_DIRECTIVES,NgIf]
                                                                    
 })
 export class NavBarComponent
@@ -21,11 +21,14 @@ export class NavBarComponent
     {
       this.snav_w='250px';
       this.btnflag=true;
+      console.log(this.btnflag);
+      
     }
     closeNav()
     {
         this.snav_w='0px';
        this.btnflag=false;
+        console.log(this.btnflag);
     }
 
 }

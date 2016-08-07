@@ -10,14 +10,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var nav_bar_component_1 = require('./nav_bar/nav_bar.component');
+var router_1 = require('@angular/router');
 var AppComponent = (function () {
     function AppComponent() {
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            directives: [nav_bar_component_1.NavBarComponent],
-            template: "\n  <div>\n    \n    <nav-bar></nav-bar>\n   \n\n  </div>\n  "
+            directives: [nav_bar_component_1.NavBarComponent, router_1.ROUTER_DIRECTIVES],
+            template: "\n  <div >\n    \n    <nav-bar></nav-bar>\n    \n  \n\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
