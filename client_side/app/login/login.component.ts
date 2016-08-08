@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Validators,Control } from '@angular/common';
+import { Validators,Control,CORE_DIRECTIVES } from '@angular/common';
 import { REACTIVE_FORM_DIRECTIVES, FormGroup, FormControl, FormBuilder} from '@angular/forms';
-import { ROUTER_DIRECTIVES } from '@angular/router';
+import { ROUTER_DIRECTIVES,Router } from '@angular/router';
 import { LoginService } from './login.service';
 
 
@@ -16,7 +16,7 @@ export interface cred
 @Component({
     selector: 'login',
     providers: [LoginService],
-    directives: [REACTIVE_FORM_DIRECTIVES,ROUTER_DIRECTIVES],
+    directives: [REACTIVE_FORM_DIRECTIVES,ROUTER_DIRECTIVES,CORE_DIRECTIVES],
     templateUrl:'./client_side/app/login/login.component.html',
     styleUrls:['client_side/app/login/login.component.css']
                                                                    
@@ -32,7 +32,7 @@ export class LoginComponent{
    private dat:boolean;
    private userid:string;
 
-   constructor(private rr:LoginService,private builder: FormBuilder) {
+   constructor(private rr:LoginService,private builder: FormBuilder,public router: Router) {
     
      this.loginForm = this.builder.group({
             Email: ['', [<any>Validators.required, <any>Validators.pattern("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}")]],
@@ -50,19 +50,19 @@ login(c:cred,isValid: boolean)
        this.showerr=true;
 
       this.rr.login(c).subscribe(
-                data => this.dat = data.loggedin,// put the data returned from the server in our variable
-                error => console.log("Error HTTP Post Service"), // in case of failure show this message
-                () => console.log("Job Done Post !")//run this code in all cases
-            ); 
+        response => {
+          localStorage.setItem('id_token', response.json().id_token);
+          this.router.navigate(['/profile']);
+        },
+        error => {
+        
+          console.log(error);
+        }
+      );
              console.log(this.dat)
-          if(this.dat)
-          {
-             // this.showser_err=true;
-          } 
-
-          else{
+         
               this.showser_err=false;
-          }  
+           
     }
     else{
         

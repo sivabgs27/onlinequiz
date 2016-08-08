@@ -14,9 +14,10 @@ var forms_1 = require('@angular/forms');
 var router_1 = require('@angular/router');
 var login_service_1 = require('./login.service');
 var LoginComponent = (function () {
-    function LoginComponent(rr, builder) {
+    function LoginComponent(rr, builder, router) {
         this.rr = rr;
         this.builder = builder;
+        this.router = router;
         this.events = [];
         this.showerr = true;
         this.showser_err = true;
@@ -29,18 +30,14 @@ var LoginComponent = (function () {
         var _this = this;
         if (isValid) {
             this.showerr = true;
-            this.rr.login(c).subscribe(function (data) { return _this.dat = data.loggedin; }, // put the data returned from the server in our variable
-            function (// put the data returned from the server in our variable
-                error) { return console.log("Error HTTP Post Service"); }, // in case of failure show this message
-            function () { return console.log("Job Done Post !"); } //run this code in all cases
-             //run this code in all cases
-            );
+            this.rr.login(c).subscribe(function (response) {
+                localStorage.setItem('id_token', response.json().id_token);
+                _this.router.navigate(['/profile']);
+            }, function (error) {
+                console.log(error);
+            });
             console.log(this.dat);
-            if (this.dat) {
-            }
-            else {
-                this.showser_err = false;
-            }
+            this.showser_err = false;
         }
         else {
             this.showerr = false;
@@ -51,11 +48,11 @@ var LoginComponent = (function () {
         core_1.Component({
             selector: 'login',
             providers: [login_service_1.LoginService],
-            directives: [forms_1.REACTIVE_FORM_DIRECTIVES, router_1.ROUTER_DIRECTIVES],
+            directives: [forms_1.REACTIVE_FORM_DIRECTIVES, router_1.ROUTER_DIRECTIVES, common_1.CORE_DIRECTIVES],
             templateUrl: './client_side/app/login/login.component.html',
             styleUrls: ['client_side/app/login/login.component.css']
         }), 
-        __metadata('design:paramtypes', [login_service_1.LoginService, forms_1.FormBuilder])
+        __metadata('design:paramtypes', [login_service_1.LoginService, forms_1.FormBuilder, router_1.Router])
     ], LoginComponent);
     return LoginComponent;
 }());
