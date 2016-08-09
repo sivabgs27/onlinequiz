@@ -1,9 +1,11 @@
 <div id="mySidenav" class="sidenav" [ngStyle]="{ 'width':snav_w }">
-  <a href="#" class="closebtn" (click)="closeNav()">×</a>
+  <a  class="closebtn" (click)="closeNav()">×</a>
   <a href="#">About</a>
   <a href="#">Services</a>
   <a href="#">Clients</a>
   <a href="#">Contact</a>
+  
+  
 </div>
 
 
@@ -22,8 +24,9 @@
     <ul class="nav navbar-nav navbar-right  hidden-xs">
       <li><a [routerLink]="['/user_reg']"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a [routerLink]="['/login']"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+     
     </ul>
   </div>
 </nav>
 
-<router-outlet></router-outlet>
+

@@ -23,7 +23,7 @@ var UserRegistrationComponent = (function () {
         this.area = ['Doha', 'Test'];
         this.myForm = this.builder.group({
             Name: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.minLength(5)])],
-            Email: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.minLength(5)])],
+            Email: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.pattern("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}")])],
             Dob: ['', [forms_1.Validators.required]],
             Sex: ['', [forms_1.Validators.required]],
             Work: ['', [forms_1.Validators.required]],

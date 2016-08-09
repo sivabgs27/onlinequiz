@@ -4,6 +4,7 @@ import {Observable} from 'rxjs/Rx';
 import {Injector} from '@angular/core'
 import 'rxjs/add/operator/map';
 import { domain_name } from '../lib';
+import { contentHeaders } from '../common/header';
 
 
 @Injectable()
@@ -18,15 +19,13 @@ export class LoginService {
 
  login(cred){
 
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
+  
     
 
-    let options = new RequestOptions({ headers: headers, method: "post" });
+    let options = new RequestOptions({ headers: contentHeaders, method: "post" });
    let result= this.http.post(this.API_URL, cred,options)
-      .map(response => response.json())
      .catch(this.handleError);
-     console.log("re===="+result);
+     
      return result;
 
   }
@@ -36,10 +35,7 @@ export class LoginService {
         return Observable.throw(error.json().error || ' error');
     }
 
-  private extractData(res: Response) {
-    let body = res.json();
-    return body.data || { };
-  }
+ 
 
 
 }

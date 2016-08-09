@@ -1,14 +1,18 @@
-<div class="test">
+<div class="test" >
+  <div class="panel">
+  <div class="innertest">
     <h3> Sign in</h3>
     <div [hidden]="showerr" style="color:#a50e0e" >
     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
      Invalid Email Address or Password 
+     
    </div>
    <div [hidden]="showser_err" style="color:#a50e0e" >
     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
      You Entered Email Address and Password does not match
+     
    </div>
-
+<br>
 
      <form [formGroup]="loginForm" novalidate (ngSubmit)="login(loginForm.value,loginForm.valid)">
 
@@ -26,7 +30,13 @@
     </div>
     </div>
        
-
-       <button type="submit" class="btn btn-primary btn-lg btn-block" >Login</button>
+       <div class=" btnpad">
+       <button type="submit" class="btn btn-primary btn-lg btn-block btnbg" >Login</button>
+       </div>
        </form>  
+       <div class="fg">
+       <a [routerLink]="['/forget_password']" > Forgot your password?</a>
+       </div>
+  </div>
+  </div>
 </div>    

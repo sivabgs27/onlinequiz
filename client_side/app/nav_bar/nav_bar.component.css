@@ -6,11 +6,13 @@
     padding-bottom: 0px;
     line-height: 80px;
 }
+
 .padding1 {
     padding-top: 20px;
      padding-bottom: 20px;
 
 }
+
 
 @media (max-width: 767px) {
     .navbar-nav > li > a {
@@ -34,7 +36,7 @@
     z-index: 1;
     top: 77px;
     left: 0;
-    background-color: #111;
+    background-color: white;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -64,4 +66,16 @@
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+}
+.navbar-inverse {
+    background-color: rgba(34, 34, 34, 0);
+    border-color: rgba(8, 8, 8, 0);
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #f5f5f5;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #f5c8c8;
 }

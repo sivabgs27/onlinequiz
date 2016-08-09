@@ -63,7 +63,7 @@ constructor(private rr:UserRegistrationService,private builder: FormBuilder) {
 
      this.myForm = this.builder.group({
              Name: ['', Validators.compose([<any>Validators.required, <any>Validators.minLength(5)])],
-             Email:['', Validators.compose([<any>Validators.required,<any>Validators.minLength(5)])],
+             Email:['', Validators.compose([<any>Validators.required, <any>Validators.pattern("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}")])],
              Dob: ['', [<any>Validators.required]],
              Sex: ['', [<any>Validators.required]],
              Work: ['', [<any>Validators.required]],

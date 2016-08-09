@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { Validators,Control } from '@angular/common';
+import { Validators,Control,CORE_DIRECTIVES } from '@angular/common';
 import { REACTIVE_FORM_DIRECTIVES, FormGroup, FormControl, FormBuilder} from '@angular/forms';
+import { ROUTER_DIRECTIVES,Router } from '@angular/router';
 import { LoginService } from './login.service';
+import { sharedService } from '../sharedservice';
 
 
 export interface cred
@@ -15,7 +17,7 @@ export interface cred
 @Component({
     selector: 'login',
     providers: [LoginService],
-    directives: [REACTIVE_FORM_DIRECTIVES],
+    directives: [REACTIVE_FORM_DIRECTIVES,ROUTER_DIRECTIVES,CORE_DIRECTIVES],
     templateUrl:'./client_side/app/login/login.component.html',
     styleUrls:['client_side/app/login/login.component.css']
                                                                    
@@ -28,15 +30,18 @@ export class LoginComponent{
    public events: any[] = [];  
    showerr:boolean=true;
    showser_err:boolean=true;
-   private dat:string;
+   private dat:boolean;
+   private userid:string;
 
-   constructor(private rr:LoginService,private builder: FormBuilder) {
+   constructor(private rr:LoginService,private builder: FormBuilder,public router: Router,private s: sharedService) {
     
      this.loginForm = this.builder.group({
             Email: ['', [<any>Validators.required, <any>Validators.pattern("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}")]],
             Password: ['', [<any>Validators.required]]
              
         });
+
+        s.condition=true;
         
 }
 
@@ -48,19 +53,28 @@ login(c:cred,isValid: boolean)
        this.showerr=true;
 
       this.rr.login(c).subscribe(
-                data => this.dat = JSON.stringify(data), // put the data returned from the server in our variable
-                error => console.log("Error HTTP Post Service"), // in case of failure show this message
-                () => console.log("Job Done Post !")//run this code in all cases
-            ); 
-             console.log(this.dat)
-          if(false)
-          {
-             // this.showser_err=true;
-          } 
+        response => {
+          localStorage.setItem('id_token', response.json().id_token);
+          this.dat=response.json().loggedin;
+          this.router.navigate(['/profile']);
+        },
+        error => {
+        
+          console.log(error);
+        }
+      );
 
-          else{
-              this.showser_err=false;
-          }  
+      console.log(this.dat);
+             if(this.dat)
+             {
+                
+             }
+             else{
+                   this.showser_err=false;
+             }
+            
+             
+           
     }
     else{
         

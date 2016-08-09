@@ -11,11 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
 var forms_1 = require('@angular/forms');
+var router_1 = require('@angular/router');
 var login_service_1 = require('./login.service');
+var sharedservice_1 = require('../sharedservice');
 var LoginComponent = (function () {
-    function LoginComponent(rr, builder) {
+    function LoginComponent(rr, builder, router, s) {
         this.rr = rr;
         this.builder = builder;
+        this.router = router;
+        this.s = s;
         this.events = [];
         this.showerr = true;
         this.showser_err = true;
@@ -23,19 +27,21 @@ var LoginComponent = (function () {
             Email: ['', [common_1.Validators.required, common_1.Validators.pattern("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}")]],
             Password: ['', [common_1.Validators.required]]
         });
+        s.condition = true;
     }
     LoginComponent.prototype.login = function (c, isValid) {
         var _this = this;
         if (isValid) {
             this.showerr = true;
-            this.rr.login(c).subscribe(function (data) { return _this.dat = JSON.stringify(data); }, // put the data returned from the server in our variable
-            function (// put the data returned from the server in our variable
-                error) { return console.log("Error HTTP Post Service"); }, // in case of failure show this message
-            function () { return console.log("Job Done Post !"); } //run this code in all cases
-             //run this code in all cases
-            );
+            this.rr.login(c).subscribe(function (response) {
+                localStorage.setItem('id_token', response.json().id_token);
+                _this.dat = response.json().loggedin;
+                _this.router.navigate(['/profile']);
+            }, function (error) {
+                console.log(error);
+            });
             console.log(this.dat);
-            if (false) {
+            if (this.dat) {
             }
             else {
                 this.showser_err = false;
@@ -50,11 +56,15 @@ var LoginComponent = (function () {
         core_1.Component({
             selector: 'login',
             providers: [login_service_1.LoginService],
-            directives: [forms_1.REACTIVE_FORM_DIRECTIVES],
+            directives: [forms_1.REACTIVE_FORM_DIRECTIVES, router_1.ROUTER_DIRECTIVES, common_1.CORE_DIRECTIVES],
             templateUrl: './client_side/app/login/login.component.html',
             styleUrls: ['client_side/app/login/login.component.css']
         }), 
+<<<<<<< HEAD
         __metadata('design:paramtypes', [login_service_1.LoginService, (typeof (_a = typeof forms_1.FormBuilder !== 'undefined' && forms_1.FormBuilder) === 'function' && _a) || Object])
+=======
+        __metadata('design:paramtypes', [login_service_1.LoginService, forms_1.FormBuilder, router_1.Router, sharedservice_1.sharedService])
+>>>>>>> cf9faeedd438cb15b4cef7e5b58798ca538d942b
     ], LoginComponent);
     return LoginComponent;
     var _a;

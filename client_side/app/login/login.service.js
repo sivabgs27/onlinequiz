@@ -13,28 +13,21 @@ var http_1 = require('@angular/http');
 var Rx_1 = require('rxjs/Rx');
 require('rxjs/add/operator/map');
 var lib_1 = require('../lib');
+var header_1 = require('../common/header');
 var LoginService = (function () {
     function LoginService(http) {
         this.API_URL = 'http://' + lib_1.domain_name + '/user_login';
         this.http = http;
     }
     LoginService.prototype.login = function (cred) {
-        var headers = new http_1.Headers();
-        headers.append('Content-Type', 'application/json');
-        var options = new http_1.RequestOptions({ headers: headers, method: "post" });
+        var options = new http_1.RequestOptions({ headers: header_1.contentHeaders, method: "post" });
         var result = this.http.post(this.API_URL, cred, options)
-            .map(function (response) { return response.json(); })
             .catch(this.handleError);
-        console.log("re====" + result);
         return result;
     };
     LoginService.prototype.handleError = function (error) {
         console.error(error);
         return Rx_1.Observable.throw(error.json().error || ' error');
-    };
-    LoginService.prototype.extractData = function (res) {
-        var body = res.json();
-        return body.data || {};
     };
     LoginService = __decorate([
         core_1.Injectable(), 

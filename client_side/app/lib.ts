@@ -1,1 +1,1 @@
-export var domain_name  = 'localhost:8080';
+export var domain_name  = 'localhost:3000';
