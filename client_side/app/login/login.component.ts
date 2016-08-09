@@ -55,6 +55,7 @@ login(c:cred,isValid: boolean)
       this.rr.login(c).subscribe(
         response => {
           localStorage.setItem('id_token', response.json().id_token);
+          this.dat=response.json().loggedin;
           this.router.navigate(['/profile']);
         },
         error => {
@@ -62,9 +63,17 @@ login(c:cred,isValid: boolean)
           console.log(error);
         }
       );
-             console.log(this.dat)
-         
-              this.showser_err=false;
+
+      console.log(this.dat);
+             if(this.dat)
+             {
+                
+             }
+             else{
+                   this.showser_err=false;
+             }
+            
+             
            
     }
     else{

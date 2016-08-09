@@ -35,12 +35,17 @@ var LoginComponent = (function () {
             this.showerr = true;
             this.rr.login(c).subscribe(function (response) {
                 localStorage.setItem('id_token', response.json().id_token);
+                _this.dat = response.json().loggedin;
                 _this.router.navigate(['/profile']);
             }, function (error) {
                 console.log(error);
             });
             console.log(this.dat);
-            this.showser_err = false;
+            if (this.dat) {
+            }
+            else {
+                this.showser_err = false;
+            }
         }
         else {
             this.showerr = false;
