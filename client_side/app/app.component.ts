@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavBarComponent} from './nav_bar/nav_bar.component';
 import { ROUTER_DIRECTIVES } from '@angular/router';
+import { NgIf } from '@angular/common';
+import { sharedService } from './sharedservice';
 
 
 
@@ -12,8 +14,8 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
   template: `
   <div >
     
-    <nav-bar></nav-bar>
-    
+    <nav-bar *ngIf="s.condition"></nav-bar>
+    <router-outlet></router-outlet>
   
 
   </div>
@@ -21,6 +23,9 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 
 })
 export class AppComponent {
- 
+   constructor(private s: sharedService) {
+    console.log("content started");
+    s.condition=true;
+  }
  }
  

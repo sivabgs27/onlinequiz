@@ -3,6 +3,7 @@ import { Validators,Control,CORE_DIRECTIVES } from '@angular/common';
 import { REACTIVE_FORM_DIRECTIVES, FormGroup, FormControl, FormBuilder} from '@angular/forms';
 import { ROUTER_DIRECTIVES,Router } from '@angular/router';
 import { LoginService } from './login.service';
+import { sharedService } from '../sharedservice';
 
 
 export interface cred
@@ -32,13 +33,15 @@ export class LoginComponent{
    private dat:boolean;
    private userid:string;
 
-   constructor(private rr:LoginService,private builder: FormBuilder,public router: Router) {
+   constructor(private rr:LoginService,private builder: FormBuilder,public router: Router,private s: sharedService) {
     
      this.loginForm = this.builder.group({
             Email: ['', [<any>Validators.required, <any>Validators.pattern("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}")]],
             Password: ['', [<any>Validators.required]]
              
         });
+
+        s.condition=true;
         
 }
 

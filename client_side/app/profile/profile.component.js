@@ -13,13 +13,16 @@ var common_1 = require('@angular/common');
 var http_1 = require('@angular/http');
 var router_1 = require('@angular/router');
 var angular2_jwt_1 = require('angular2-jwt');
+var sharedservice_1 = require('../sharedservice');
 var template = './client_side/app/profile/profile.component.html';
 var ProfileComponent = (function () {
-    function ProfileComponent(router, http, authHttp) {
+    function ProfileComponent(router, http, authHttp, s) {
         this.router = router;
         this.http = http;
         this.authHttp = authHttp;
+        this.s = s;
         this.jwt = localStorage.getItem('id_token');
+        s.condition = false;
     }
     ProfileComponent.prototype.logout = function () {
         localStorage.removeItem('id_token');
@@ -32,7 +35,7 @@ var ProfileComponent = (function () {
             templateUrl: './client_side/app/profile/profile.html',
             styles: ['./client_side/app/profile/profile.component.css']
         }), 
-        __metadata('design:paramtypes', [router_1.Router, http_1.Http, angular2_jwt_1.AuthHttp])
+        __metadata('design:paramtypes', [router_1.Router, http_1.Http, angular2_jwt_1.AuthHttp, sharedservice_1.sharedService])
     ], ProfileComponent);
     return ProfileComponent;
 }());

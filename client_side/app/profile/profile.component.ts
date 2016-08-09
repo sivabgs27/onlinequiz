@@ -3,6 +3,7 @@ import { CORE_DIRECTIVES } from '@angular/common';
 import { Http, Headers } from '@angular/http';
 import { Router } from '@angular/router';
 import { AuthHttp } from 'angular2-jwt';
+import { sharedService } from '../sharedservice';
 
 
 const template = './client_side/app/profile/profile.component.html';
@@ -19,9 +20,9 @@ export class ProfileComponent {
   response: string;
   api: string;
 
-  constructor(public router: Router, public http: Http, public authHttp: AuthHttp) {
+  constructor(public router: Router, public http: Http, public authHttp: AuthHttp,private s: sharedService) {
     this.jwt = localStorage.getItem('id_token');
-   
+    s.condition=false;
   }
 
   logout() {

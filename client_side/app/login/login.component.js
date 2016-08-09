@@ -13,11 +13,13 @@ var common_1 = require('@angular/common');
 var forms_1 = require('@angular/forms');
 var router_1 = require('@angular/router');
 var login_service_1 = require('./login.service');
+var sharedservice_1 = require('../sharedservice');
 var LoginComponent = (function () {
-    function LoginComponent(rr, builder, router) {
+    function LoginComponent(rr, builder, router, s) {
         this.rr = rr;
         this.builder = builder;
         this.router = router;
+        this.s = s;
         this.events = [];
         this.showerr = true;
         this.showser_err = true;
@@ -25,6 +27,7 @@ var LoginComponent = (function () {
             Email: ['', [common_1.Validators.required, common_1.Validators.pattern("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}")]],
             Password: ['', [common_1.Validators.required]]
         });
+        s.condition = true;
     }
     LoginComponent.prototype.login = function (c, isValid) {
         var _this = this;
@@ -52,7 +55,7 @@ var LoginComponent = (function () {
             templateUrl: './client_side/app/login/login.component.html',
             styleUrls: ['client_side/app/login/login.component.css']
         }), 
-        __metadata('design:paramtypes', [login_service_1.LoginService, forms_1.FormBuilder, router_1.Router])
+        __metadata('design:paramtypes', [login_service_1.LoginService, forms_1.FormBuilder, router_1.Router, sharedservice_1.sharedService])
     ], LoginComponent);
     return LoginComponent;
 }());
