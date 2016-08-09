@@ -54,9 +54,10 @@ var LoginComponent = (function () {
             templateUrl: './client_side/app/login/login.component.html',
             styleUrls: ['client_side/app/login/login.component.css']
         }), 
-        __metadata('design:paramtypes', [login_service_1.LoginService, forms_1.FormBuilder])
+        __metadata('design:paramtypes', [login_service_1.LoginService, (typeof (_a = typeof forms_1.FormBuilder !== 'undefined' && forms_1.FormBuilder) === 'function' && _a) || Object])
     ], LoginComponent);
     return LoginComponent;
+    var _a;
 }());
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=login.component.js.map

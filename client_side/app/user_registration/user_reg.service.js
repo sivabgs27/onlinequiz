@@ -34,9 +34,10 @@ var UserRegistrationService = (function () {
     };
     UserRegistrationService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
+        __metadata('design:paramtypes', [(typeof (_a = typeof http_1.Http !== 'undefined' && http_1.Http) === 'function' && _a) || Object])
     ], UserRegistrationService);
     return UserRegistrationService;
+    var _a;
 }());
 exports.UserRegistrationService = UserRegistrationService;
 //# sourceMappingURL=user_reg.service.js.map
