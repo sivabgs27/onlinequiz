@@ -49,6 +49,12 @@
     border-radius: 9px;
 }
 
+.panel2{
+        background-color: rgba(241, 232, 232, 0.89);
+    border: 1px solid transparent;
+    border-radius: 9px;
+}
+
 
 @media (max-width: 767px){
 .btnpadd

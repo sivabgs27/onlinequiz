@@ -38,19 +38,13 @@ var LoginComponent = (function () {
                 _this.dat = response.json().loggedin;
                 _this.router.navigate(['/profile']);
             }, function (error) {
+                _this.showser_err = false;
                 console.log(error);
             });
-            console.log(this.dat);
-            if (this.dat) {
-            }
-            else {
-                this.showser_err = false;
-            }
         }
         else {
             this.showerr = false;
         }
-        console.log(c, isValid);
     };
     LoginComponent = __decorate([
         core_1.Component({

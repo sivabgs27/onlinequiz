@@ -83,6 +83,8 @@ constructor(private rr:UserRegistrationService,private builder: FormBuilder) {
   area = ['Doha','Test'];
 
     guser:user;
+   
+   
  
  
   message:String;
@@ -94,15 +96,15 @@ constructor(private rr:UserRegistrationService,private builder: FormBuilder) {
         myFormStatusChanges$.subscribe(x => this.events.push({ event: 'STATUS_CHANGED', object: x }));
         myFormValueChanges$.subscribe(x => this.events.push({ event: 'VALUE_CHANGED', object: x }));
     }
-  
-  
+
+ 
 
   
 
   onSubmit(model: user, isValid: boolean) {
 
        console.log(model);
-       this.guser=model;
+      this.guser=model;
        
       let user = JSON.stringify(model);
       
@@ -131,16 +133,7 @@ constructor(private rr:UserRegistrationService,private builder: FormBuilder) {
 validation fuctions
 
 */
-     static mailFormat(control: Control): ValidationResult {
-
-        var EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
-
-        if (control.value != "" && (control.value.length <= 5 || !EMAIL_REGEXP.test(control.value))) {
-            return { "incorrectMailFormat": true };
-        }
-
-        return null;
-    }
+    
 
 
 

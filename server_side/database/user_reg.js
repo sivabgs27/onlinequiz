@@ -9,7 +9,7 @@ module.exports.store = function(data){
     var user = new db.users({
         name: data.Name,
         password: ''+data.Password,
-        email: data.Email,
+        email: data.Email.toLowerCase(),
         roles: null,
         dob: data.Dob,
         sex: data.Sex,
@@ -26,6 +26,12 @@ module.exports.store = function(data){
         }
         else {
             console.log('Saved Successfully: ' + userObj);
+
+            db.users.findByIdAndUpdate(userObj._id,{$set:{password: userObj._id}},function(err,data){
+            if (err) { console.log(err);}
+           else{  }
+            });
+
             require('../lib_list').email.sendemail(userObj.name,userObj.email,require('../lib_list').domain_name+'new_userpass/'+userObj.email+'/'+userObj._id);
         }
     });
