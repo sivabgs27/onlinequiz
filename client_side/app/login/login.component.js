@@ -60,14 +60,9 @@ var LoginComponent = (function () {
             templateUrl: './client_side/app/login/login.component.html',
             styleUrls: ['client_side/app/login/login.component.css']
         }), 
-<<<<<<< HEAD
-        __metadata('design:paramtypes', [login_service_1.LoginService, (typeof (_a = typeof forms_1.FormBuilder !== 'undefined' && forms_1.FormBuilder) === 'function' && _a) || Object])
-=======
         __metadata('design:paramtypes', [login_service_1.LoginService, forms_1.FormBuilder, router_1.Router, sharedservice_1.sharedService])
->>>>>>> cf9faeedd438cb15b4cef7e5b58798ca538d942b
     ], LoginComponent);
     return LoginComponent;
-    var _a;
 }());
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=login.component.js.map

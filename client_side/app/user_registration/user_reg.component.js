@@ -80,10 +80,9 @@ var UserRegistrationComponent = (function () {
             templateUrl: './client_side/app/user_registration/user.html',
             styleUrls: ['client_side/app/user_registration/user_reg.component.css']
         }), 
-        __metadata('design:paramtypes', [user_reg_service_1.UserRegistrationService, (typeof (_a = typeof forms_1.FormBuilder !== 'undefined' && forms_1.FormBuilder) === 'function' && _a) || Object])
+        __metadata('design:paramtypes', [user_reg_service_1.UserRegistrationService, forms_1.FormBuilder])
     ], UserRegistrationComponent);
     return UserRegistrationComponent;
-    var _a;
 }());
 exports.UserRegistrationComponent = UserRegistrationComponent;
 //# sourceMappingURL=user_reg.component.js.map
