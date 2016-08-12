@@ -34,11 +34,10 @@
                   </div>
                   
                   <div class="form-group">
-                  <div class="inner-addon left-addon">
-                  <span class="glyphicon glyphicon-calendar"></span>
-                  <input type="text" class="form-control" formControlName="Dob" placeholder="Date of Birth" onfocus="(this.type='date')" />
-                  </div>
-                  <label>&nbsp;</label><em [hidden]="myForm.controls.Dob.valid || (myForm.controls.Dob.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
+                 
+                  
+                  <datepicker [(ngModel)]="date"   [ngModelOptions]="{standalone: true}"  ></datepicker>
+                 <label>&nbsp;</label><em [hidden]="date ||(!date && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
                   </div>
 
                  
@@ -139,9 +138,14 @@
                       
 
                     </form>
+
+                   
                     
-            </div>
+                    </div>
+
+                    
 </div>
+{{date}}
 </div>
 </div>
 

@@ -11,6 +11,9 @@
     'rxjs':                       'node_modules/rxjs',
     'moment':                     'node_modules/moment/moment.js',
     "angular2-jwt":               "node_modules/angular2-jwt/angular2-jwt.js"
+    
+   
+  
   };
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {

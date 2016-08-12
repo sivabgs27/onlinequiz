@@ -13,9 +13,24 @@ var common_1 = require('@angular/common');
 var router_1 = require('@angular/router');
 var NavBarComponent = (function () {
     function NavBarComponent() {
+        this.nv_bgc = "rgba(34, 34, 34, 0)";
+        this.nv_brc = "rgba(8, 8, 8, 0)";
         this.snav_w = '0px';
         this.btnflag = false;
     }
+    NavBarComponent.prototype.track = function (event) {
+        if (document.body.scrollTop < 40) {
+            this.nv_bgc = "rgba(34, 34, 34, 0)";
+            this.nv_brc = "rgba(8, 8, 8, 0)";
+            console.log("top");
+        }
+        else {
+            this.nv_bgc = "#dc5b5b";
+            this.nv_brc = "rgba(8, 8, 8, 0)";
+            console.log("bot");
+        }
+        //  console.debug("Scroll Event", document.body.scrollTop);
+    };
     NavBarComponent.prototype.snav_open = function () {
         this.snav_w = '250px';
         this.btnflag = true;
@@ -26,6 +41,12 @@ var NavBarComponent = (function () {
         this.btnflag = false;
         console.log(this.btnflag);
     };
+    __decorate([
+        core_1.HostListener('window:scroll', ['$event']), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', [Object]), 
+        __metadata('design:returntype', void 0)
+    ], NavBarComponent.prototype, "track", null);
     NavBarComponent = __decorate([
         core_1.Component({
             selector: 'nav-bar',

@@ -8,6 +8,7 @@ import { AUTH_PROVIDERS } from 'angular2-jwt';
 import { AuthGuard } from './common/auth.guard';
 import { sharedService } from './sharedservice';
 
+
 import 'rxjs/Rx';
 
 enableProdMode();
