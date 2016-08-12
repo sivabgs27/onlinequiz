@@ -25,7 +25,7 @@ var NavBarComponent = (function () {
             console.log("top");
         }
         else {
-            this.nv_bgc = "#dc5b5b";
+            this.nv_bgc = "#f9ad04";
             this.nv_brc = "rgba(8, 8, 8, 0)";
             console.log("bot");
         }
