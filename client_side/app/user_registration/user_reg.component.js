@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
 var forms_1 = require('@angular/forms');
 var user_reg_service_1 = require('./user_reg.service');
+var datepicker_1 = require('./datepicker');
 var router_1 = require('@angular/router');
 var UserRegistrationComponent = (function () {
     function UserRegistrationComponent(rr, builder) {
@@ -20,11 +21,12 @@ var UserRegistrationComponent = (function () {
         this.submitted = false;
         this.events = [];
         this.showForm = true;
+        this.date = '';
         this.area = ['Doha', 'Test'];
         this.myForm = this.builder.group({
             Name: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.minLength(5)])],
             Email: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.pattern("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}")])],
-            Dob: ['', [forms_1.Validators.required]],
+            //Dob: ['', [<any>Validators.required]],
             Sex: ['', [forms_1.Validators.required]],
             Work: ['', [forms_1.Validators.required]],
             Area: ['0', [forms_1.Validators.required]],
@@ -47,8 +49,10 @@ var UserRegistrationComponent = (function () {
         var _this = this;
         console.log(model);
         this.guser = model;
+        this.guser.Dob = this.date;
         var user = JSON.stringify(model);
         if (isValid) {
+            console.log(user);
             this.rr.registerUser(user).subscribe(function (data) { return _this.message = data.flag; }, // put the data returned from the server in our variable
             function (// put the data returned from the server in our variable
                 error) { return console.log("Error HTTP Post Service"); }, // in case of failure show this message
@@ -61,22 +65,11 @@ var UserRegistrationComponent = (function () {
             this.submitted = true;
         }
     };
-    /*
-    validation fuctions
-    
-    */
-    UserRegistrationComponent.mailFormat = function (control) {
-        var EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
-        if (control.value != "" && (control.value.length <= 5 || !EMAIL_REGEXP.test(control.value))) {
-            return { "incorrectMailFormat": true };
-        }
-        return null;
-    };
     UserRegistrationComponent = __decorate([
         core_1.Component({
             selector: 'register-user',
             providers: [user_reg_service_1.UserRegistrationService],
-            directives: [common_1.CORE_DIRECTIVES, forms_1.REACTIVE_FORM_DIRECTIVES, common_1.NgIf, router_1.ROUTER_DIRECTIVES],
+            directives: [common_1.CORE_DIRECTIVES, forms_1.REACTIVE_FORM_DIRECTIVES, common_1.NgIf, router_1.ROUTER_DIRECTIVES, datepicker_1.DatePicker, common_1.NgModel],
             templateUrl: './client_side/app/user_registration/user.html',
             styleUrls: ['client_side/app/user_registration/user_reg.component.css']
         }), 

@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-     <!--1. Load libraries 
+
+
+    <link rel="stylesheet" href="ionicons-2.0.1/css/ionicons.min.css"
+    <!-- 1. Load libraries -->
+
      <!-- Polyfill(s) for older browsers -->
     <!--<script src="../../node_modules/core-js/client/shim.min.js"></script>
     <script src="../../node_modules/zone.js/dist/zone.js"></script>
@@ -23,7 +27,13 @@
   <body class="bgimg">
    
      
-       <my-app>Loading...</my-app>
+       <my-app>
+         <div id="loadingDiv">
+    <div>
+        <h7>Please wait...</h7>
+    </div>
+</div>
+         </my-app>
     
     <script src="./app/bundle.js"></script>
   </body>

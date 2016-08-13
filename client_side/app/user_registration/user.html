@@ -18,7 +18,9 @@
                   <span class="glyphicon glyphicon-user"></span>
                   <input type="text" class="form-control" formControlName="Name" name="Name" placeholder="Name" />
                   </div>
-                  <label>&nbsp;</label> <em [hidden]="myForm.controls.Name.valid || (myForm.controls.Name.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>Name is required!(minimum 5 character)</em>
+                  <label>&nbsp;</label> <em [hidden]="( !myForm.controls.Name.hasError('required') || (myForm.controls.Name.hasError('required') && !submitted))" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
+                  <label>&nbsp;</label> <em [hidden]="( !myForm.controls.Name.hasError('minlength') || (myForm.controls.Name.hasError('minlength') && !submitted))" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>Name is required minimum 5 character</em>
+
                   </div>
 
                   <div class="form-group">
@@ -26,15 +28,16 @@
                   <span class="glyphicon glyphicon-envelope"></span>
                 <input type="text" class="form-control" formControlName="Email" placeholder="Email Address" />
                   </div>
-                  <label>&nbsp;</label><em [hidden]="myForm.controls.Email.valid || (myForm.controls.Email.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
+                  <label>&nbsp;</label><em [hidden]="( !myForm.controls.Email.hasError('required') || (myForm.controls.Email.hasError('required') && !submitted))" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
+                 <label>&nbsp;</label><em [hidden]="( !myForm.controls.Email.hasError('pattern') || (myForm.controls.Email.hasError('Pattern') && !submitted))" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>Invaild Email Address</em>
+
                   </div>
                   
                   <div class="form-group">
-                  <div class="inner-addon left-addon">
-                  <span class="glyphicon glyphicon-calendar"></span>
-                  <input type="text" class="form-control" formControlName="Dob" placeholder="Date of Birth" onfocus="(this.type='date')" />
-                  </div>
-                  <label>&nbsp;</label><em [hidden]="myForm.controls.Dob.valid || (myForm.controls.Dob.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
+                 
+                  
+                  <datepicker [(ngModel)]="date"   [ngModelOptions]="{standalone: true}"  ></datepicker>
+                 <label>&nbsp;</label><em [hidden]="date ||(!date && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
                   </div>
 
                  
@@ -99,7 +102,7 @@
                   <div class="form-group">
                   <div class="inner-addon left-addon">
                   <span class="glyphicon glyphicon-phone"></span>
-                  <input type="text" formControlName="Phone_No1" name="Pno1" class="form-control" placeholder="Phone_Number1">
+                  <input type="number" formControlName="Phone_No1" name="Pno1" class="form-control" placeholder="Phone_Number1">
                   </div>
                   <label>&nbsp;</label><em [hidden]="myForm.controls.Phone_No1.valid || (myForm.controls.Phone_No1.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
                   </div>
@@ -107,7 +110,7 @@
                   <div class="form-group">
                   <div class="inner-addon left-addon">
                   <span class="glyphicon glyphicon-phone"></span>
-                  <input type="text" formControlName="Phone_No2" name="Pno2" class="form-control" placeholder="Phone_Number2">
+                  <input type="number" formControlName="Phone_No2" name="Pno2" class="form-control" placeholder="Phone_Number2">
                   </div>
                   <label>&nbsp;</label><em [hidden]="myForm.controls.Phone_No2.valid || (myForm.controls.Phone_No2.pristine && !submitted)" style="color:#900909"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>required!</em>
                   </div>
@@ -135,21 +138,36 @@
                       
 
                     </form>
+
+                   
                     
-            </div>
+                    </div>
+
+                    
+</div>
+{{date}}
+</div>
 </div>
 
 
 <div *ngIf="!showForm">
-  <div class="container-fluid">
-    <h2 class="text-center login-title">
-      An Email Confirmation has been sent to {{guser.Email}} , Please follow the link provided and create you password. <br><br>
+
+  
+<div class="container-fluid" >
+<div class="panel panel2">
+<div class="innertest">
+ <h2 class="text-center login-title">
+      An Email Confirmation has been sent to {{guser.Email.toLowerCase()}} , Please follow the link provided and create you password. <br><br>
       Once done with that, <a [routerLink]="['/login']">Login here to Continue</a>
     </h2>
-  </div>
+    
+ 
 </div>
 </div>
 </div>
+ 
+</div>
+
 
 
 

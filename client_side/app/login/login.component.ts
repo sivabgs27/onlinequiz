@@ -59,22 +59,12 @@ login(c:cred,isValid: boolean)
           this.router.navigate(['/profile']);
         },
         error => {
-        
+          this.showser_err=false;
           console.log(error);
         }
       );
 
-      console.log(this.dat);
-             if(this.dat)
-             {
-                
-             }
-             else{
-                   this.showser_err=false;
-             }
-            
-             
-           
+   
     }
     else{
         
@@ -84,7 +74,7 @@ login(c:cred,isValid: boolean)
      
     }
     
-console.log(c,isValid);
+
 
 }
  

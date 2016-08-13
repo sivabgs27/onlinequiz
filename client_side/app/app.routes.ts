@@ -10,10 +10,13 @@ const routes: RouterConfig = [
    {
     path: '',
     component: AppComponent
+    
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    
+    
   },
   {
     path: 'user_reg',
@@ -24,7 +27,7 @@ const routes: RouterConfig = [
     component: ForgetPassword
   },
   {
-     path: 'profile',
+    path: 'profile',
     component: ProfileComponent,
     canActivate: [AuthGuard] 
   }

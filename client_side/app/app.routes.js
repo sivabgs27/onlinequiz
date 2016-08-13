@@ -13,7 +13,7 @@ var routes = [
     },
     {
         path: 'login',
-        component: login_component_1.LoginComponent
+        component: login_component_1.LoginComponent,
     },
     {
         path: 'user_reg',

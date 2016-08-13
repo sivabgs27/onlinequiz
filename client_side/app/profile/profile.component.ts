@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CORE_DIRECTIVES } from '@angular/common';
 import { Http, Headers } from '@angular/http';
 import { Router } from '@angular/router';
-import { AuthHttp } from 'angular2-jwt';
+import { AuthHttp ,JwtHelper} from 'angular2-jwt';
 import { sharedService } from '../sharedservice';
 
 
@@ -15,15 +15,18 @@ const template = './client_side/app/profile/profile.component.html';
   styles:['./client_side/app/profile/profile.component.css'] 
 })
 export class ProfileComponent {
-  jwt: string;
+  token: string;
   decodedJwt: string;
   response: string;
   api: string;
+  jwtHelper: JwtHelper = new JwtHelper();
 
   constructor(public router: Router, public http: Http, public authHttp: AuthHttp,private s: sharedService) {
-    this.jwt = localStorage.getItem('id_token');
+    this.token = localStorage.getItem('id_token');
+  
     s.condition=false;
   }
+    
 
   logout() {
     localStorage.removeItem('id_token');

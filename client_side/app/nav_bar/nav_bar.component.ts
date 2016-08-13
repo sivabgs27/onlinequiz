@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,HostListener } from '@angular/core';
 import {NgStyle,NgIf} from '@angular/common';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
@@ -13,6 +13,30 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 })
 export class NavBarComponent
 {
+   @HostListener('window:scroll', ['$event'])
+    track(event) {
+        if( document.body.scrollTop < 40){
+            
+            this.nv_bgc="rgba(34, 34, 34, 0)";
+            this.nv_brc="rgba(8, 8, 8, 0)";
+          console.log("top");
+          
+        }
+        else
+        {
+
+          this.nv_bgc="#f9ad04";
+            this.nv_brc="rgba(8, 8, 8, 0)";
+
+
+            console.log("bot");
+        }
+   //  console.debug("Scroll Event", document.body.scrollTop);
+    }
+    
+    nv_bgc="rgba(34, 34, 34, 0)";
+    nv_brc="rgba(8, 8, 8, 0)";
+
     snav_w='0px';
     btnflag:boolean=false;
     

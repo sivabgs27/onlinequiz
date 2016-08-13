@@ -6,5 +6,5 @@ module.exports.store = function(id,pass){
         if (err) { console.log(err);}
         else{ console.log("Password has been Updated..."+data); }
     });
-    return "Password has been updated...";
+  //  return "Password has been updated...";
 };
