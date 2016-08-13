@@ -4,6 +4,7 @@ import { REACTIVE_FORM_DIRECTIVES, FormGroup, FormControl, FormBuilder,Validator
 import { UserRegistrationService } from './user_reg.service';
 import {DatePicker} from './datepicker';
 import { ROUTER_DIRECTIVES } from '@angular/router';
+import { sharedService } from '../sharedservice';
 
 
 /**
@@ -60,7 +61,12 @@ export class UserRegistrationComponent {
 
   
   
-constructor(private rr:UserRegistrationService,private builder: FormBuilder) {
+constructor(private rr:UserRegistrationService,private builder: FormBuilder,public s:sharedService) {
+
+
+      s.condition=true;
+        s.login=false;
+        s.signup=true;
     
 
      this.myForm = this.builder.group({
@@ -78,7 +84,7 @@ constructor(private rr:UserRegistrationService,private builder: FormBuilder) {
              
         });
         this.subcribeToFormChanges();
-
+       
 }
 
 

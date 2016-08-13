@@ -14,15 +14,20 @@ var forms_1 = require('@angular/forms');
 var user_reg_service_1 = require('./user_reg.service');
 var datepicker_1 = require('./datepicker');
 var router_1 = require('@angular/router');
+var sharedservice_1 = require('../sharedservice');
 var UserRegistrationComponent = (function () {
-    function UserRegistrationComponent(rr, builder) {
+    function UserRegistrationComponent(rr, builder, s) {
         this.rr = rr;
         this.builder = builder;
+        this.s = s;
         this.submitted = false;
         this.events = [];
         this.showForm = true;
         this.date = '';
         this.area = ['Doha', 'Test'];
+        s.condition = true;
+        s.login = false;
+        s.signup = true;
         this.myForm = this.builder.group({
             Name: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.minLength(5)])],
             Email: ['', forms_1.Validators.compose([forms_1.Validators.required, forms_1.Validators.pattern("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}")])],
@@ -73,7 +78,7 @@ var UserRegistrationComponent = (function () {
             templateUrl: './client_side/app/user_registration/user.html',
             styleUrls: ['client_side/app/user_registration/user_reg.component.css']
         }), 
-        __metadata('design:paramtypes', [user_reg_service_1.UserRegistrationService, forms_1.FormBuilder])
+        __metadata('design:paramtypes', [user_reg_service_1.UserRegistrationService, forms_1.FormBuilder, sharedservice_1.sharedService])
     ], UserRegistrationComponent);
     return UserRegistrationComponent;
 }());

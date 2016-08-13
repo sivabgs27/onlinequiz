@@ -22,9 +22,11 @@ export class ProfileComponent {
   jwtHelper: JwtHelper = new JwtHelper();
 
   constructor(public router: Router, public http: Http, public authHttp: AuthHttp,private s: sharedService) {
+    
+    s.condition=false;
     this.token = localStorage.getItem('id_token');
   
-    s.condition=false;
+    
   }
     
 

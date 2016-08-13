@@ -14,6 +14,7 @@ var forms_1 = require('@angular/forms');
 var router_1 = require('@angular/router');
 var login_service_1 = require('./login.service');
 var sharedservice_1 = require('../sharedservice');
+var angular2_jwt_1 = require('angular2-jwt');
 var LoginComponent = (function () {
     function LoginComponent(rr, builder, router, s) {
         this.rr = rr;
@@ -27,7 +28,15 @@ var LoginComponent = (function () {
             Email: ['', [common_1.Validators.required, common_1.Validators.pattern("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}")]],
             Password: ['', [common_1.Validators.required]]
         });
-        s.condition = true;
+        if (angular2_jwt_1.tokenNotExpired()) {
+            s.condition = false;
+            this.router.navigate(['/profile']);
+        }
+        else {
+            s.condition = true;
+            s.login = true;
+            s.signup = false;
+        }
     }
     LoginComponent.prototype.login = function (c, isValid) {
         var _this = this;

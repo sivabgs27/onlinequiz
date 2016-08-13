@@ -4,12 +4,10 @@ var user_reg_component_1 = require('./user_registration/user_reg.component');
 var login_component_1 = require('./login/login.component');
 var forget_password_component_1 = require('./forget_password/forget_password.component');
 var profile_component_1 = require('./profile/profile.component');
-var app_component_1 = require('./app.component');
 var auth_guard_1 = require('./common/auth.guard');
 var routes = [
     {
-        path: '',
-        component: app_component_1.AppComponent
+        path: '', redirectTo: 'login', terminal: true
     },
     {
         path: 'login',

@@ -3,15 +3,15 @@ import { UserRegistrationComponent } from './user_registration/user_reg.componen
 import { LoginComponent } from './login/login.component';
 import { ForgetPassword} from './forget_password/forget_password.component';
 import {ProfileComponent} from './profile/profile.component';
+import {NavBarComponent} from './nav_bar/nav_bar.component';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './common/auth.guard';
 
 const routes: RouterConfig = [
-   {
-    path: '',
-    component: AppComponent
-    
+  {
+     path: '', redirectTo: 'login', terminal: true 
   },
+
   {
     path: 'login',
     component: LoginComponent,
@@ -31,6 +31,7 @@ const routes: RouterConfig = [
     component: ProfileComponent,
     canActivate: [AuthGuard] 
   }
+ 
 ];
 
 export const appRouterProviders = [

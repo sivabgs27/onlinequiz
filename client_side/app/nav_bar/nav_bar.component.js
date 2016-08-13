@@ -11,8 +11,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
 var router_1 = require('@angular/router');
+var sharedservice_1 = require('../sharedservice');
 var NavBarComponent = (function () {
-    function NavBarComponent() {
+    function NavBarComponent(s) {
+        this.s = s;
         this.nv_bgc = "rgba(34, 34, 34, 0)";
         this.nv_brc = "rgba(8, 8, 8, 0)";
         this.snav_w = '0px';
@@ -54,7 +56,7 @@ var NavBarComponent = (function () {
             styleUrls: ['./client_side/app/nav_bar/nav_bar.component.css'],
             directives: [router_1.ROUTER_DIRECTIVES, common_1.NgIf]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [sharedservice_1.sharedService])
     ], NavBarComponent);
     return NavBarComponent;
 }());

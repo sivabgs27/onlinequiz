@@ -22,8 +22,8 @@ var ProfileComponent = (function () {
         this.authHttp = authHttp;
         this.s = s;
         this.jwtHelper = new angular2_jwt_1.JwtHelper();
-        this.token = localStorage.getItem('id_token');
         s.condition = false;
+        this.token = localStorage.getItem('id_token');
     }
     ProfileComponent.prototype.logout = function () {
         localStorage.removeItem('id_token');

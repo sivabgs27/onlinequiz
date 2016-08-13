@@ -12,6 +12,8 @@ var core_1 = require('@angular/core');
 var sharedService = (function () {
     function sharedService() {
         this.condition = true;
+        this.login = true;
+        this.signup = false;
     }
     sharedService = __decorate([
         core_1.Injectable(), 

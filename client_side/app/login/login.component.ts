@@ -4,6 +4,7 @@ import { REACTIVE_FORM_DIRECTIVES, FormGroup, FormControl, FormBuilder} from '@a
 import { ROUTER_DIRECTIVES,Router } from '@angular/router';
 import { LoginService } from './login.service';
 import { sharedService } from '../sharedservice';
+import { tokenNotExpired } from 'angular2-jwt';
 
 
 export interface cred
@@ -35,13 +36,29 @@ export class LoginComponent{
 
    constructor(private rr:LoginService,private builder: FormBuilder,public router: Router,private s: sharedService) {
     
-     this.loginForm = this.builder.group({
+
+    this.loginForm = this.builder.group({
             Email: ['', [<any>Validators.required, <any>Validators.pattern("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}")]],
             Password: ['', [<any>Validators.required]]
              
         });
 
+    if (tokenNotExpired()) {
+      s.condition=false;
+       this.router.navigate(['/profile']);
+    }
+
+   else
+   {
+      
+
         s.condition=true;
+        s.login=true;
+        s.signup=false;
+   }
+
+
+    
         
 }
 
