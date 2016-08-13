@@ -16,4 +16,10 @@ var UserSchema = new mongoDB.Schema({
     expertise_level: { type: Number, index: true },
     group_set: Array
 });
+
+var AdministrationSchema = new mongoDB.Schema({
+    username: {type: String,index:true},
+    password:{type: String,index:true}
+});
 module.exports.users = mongoDB.model('users', UserSchema);
+module.exports.administrations = mongoDB.model('administrations', AdministrationSchema);

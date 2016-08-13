@@ -3,7 +3,8 @@ import { UserRegistrationComponent } from './user_registration/user_reg.componen
 import { LoginComponent } from './login/login.component';
 import { ForgetPassword} from './forget_password/forget_password.component';
 import {ProfileComponent} from './profile/profile.component';
-import {NavBarComponent} from './nav_bar/nav_bar.component';
+import {AdminLoginComponent} from './admin_login/admin_login.component';
+import {AdminDashboardComponent} from './admin_dashboard/admin_dashboard.comonent';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './common/auth.guard';
 
@@ -19,6 +20,10 @@ const routes: RouterConfig = [
     
   },
   {
+    path: 'admin_login',
+    component: AdminLoginComponent
+  },
+  {
     path: 'user_reg',
     component: UserRegistrationComponent
   },
@@ -30,8 +35,12 @@ const routes: RouterConfig = [
     path: 'profile',
     component: ProfileComponent,
     canActivate: [AuthGuard] 
+  },
+  {
+    path: 'admin_dashboard',
+    component: AdminDashboardComponent,
+    canActivate: [AuthGuard] 
   }
- 
 ];
 
 export const appRouterProviders = [

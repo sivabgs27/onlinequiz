@@ -2,7 +2,7 @@
     min-height: 80px;
 }
 .navbar-nav > li > a {
-    padding-top: 0px;
+    padding-top: 20px;
     padding-bottom: 0px;
     line-height: 80px;
 }
@@ -11,6 +11,12 @@
     padding-top: 20px;
      padding-bottom: 20px;
 
+}
+
+.lipad{
+    padding-right: 10px;
+    padding-left: 80%;
+   
 }
 
 
@@ -67,7 +73,7 @@
     margin-left: 50px;
 }
 .navbtn {
-    position: absolute;
+  
     top: 15;
     right: 25px;
     font-size: 20px !important;
@@ -75,6 +81,7 @@
     background-color: #11735b;
     
 }
+
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}

@@ -23,11 +23,15 @@
     </ul>
     <ul [hidden]="s.signup" class="nav navbar-nav navbar-right  hidden-xs">
       <li (click)="closeNav()" ><a [routerLink]="['user_reg']" routerLinkActive="active"><button class="btn navbtn"><span class="glyphicon glyphicon-user" ></span> Sign Up</button></a></li>
+      <li  (click)="closeNav()" ><a [routerLink]="['admin_login']" > <button class="btn navbtn"><span class="glyphicon glyphicon-log-in" ></span> Admin</button></a></li>
+
     </ul>
     <ul [hidden]="s.login" class="nav navbar-nav navbar-right  hidden-xs">
       <li  (click)="closeNav()" ><a [routerLink]="['login']" > <button class="btn navbtn"><span class="glyphicon glyphicon-log-in" ></span> Login</button></a></li>
-     
+      <li  (click)="closeNav()" ><a [routerLink]="['admin_login']" > <button class="btn navbtn"><span class="glyphicon glyphicon-log-in" ></span> Admin</button></a></li>
+
     </ul>
+    
   </div>
 </nav>
 

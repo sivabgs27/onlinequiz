@@ -4,6 +4,8 @@ var user_reg_component_1 = require('./user_registration/user_reg.component');
 var login_component_1 = require('./login/login.component');
 var forget_password_component_1 = require('./forget_password/forget_password.component');
 var profile_component_1 = require('./profile/profile.component');
+var admin_login_component_1 = require('./admin_login/admin_login.component');
+var admin_dashboard_comonent_1 = require('./admin_dashboard/admin_dashboard.comonent');
 var auth_guard_1 = require('./common/auth.guard');
 var routes = [
     {
@@ -12,6 +14,10 @@ var routes = [
     {
         path: 'login',
         component: login_component_1.LoginComponent,
+    },
+    {
+        path: 'admin_login',
+        component: admin_login_component_1.AdminLoginComponent
     },
     {
         path: 'user_reg',
@@ -24,6 +30,11 @@ var routes = [
     {
         path: 'profile',
         component: profile_component_1.ProfileComponent,
+        canActivate: [auth_guard_1.AuthGuard]
+    },
+    {
+        path: 'admin_dashboard',
+        component: admin_dashboard_comonent_1.AdminDashboardComponent,
         canActivate: [auth_guard_1.AuthGuard]
     }
 ];

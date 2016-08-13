@@ -12,11 +12,11 @@ var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
 var forms_1 = require('@angular/forms');
 var router_1 = require('@angular/router');
-var login_service_1 = require('./login.service');
+var admin_login_service_1 = require('./admin_login.service');
 var sharedservice_1 = require('../sharedservice');
 var angular2_jwt_1 = require('angular2-jwt');
-var LoginComponent = (function () {
-    function LoginComponent(rr, builder, router, s) {
+var AdminLoginComponent = (function () {
+    function AdminLoginComponent(rr, builder, router, s) {
         this.rr = rr;
         this.builder = builder;
         this.router = router;
@@ -25,32 +25,29 @@ var LoginComponent = (function () {
         this.showerr = true;
         this.showser_err = true;
         this.loginForm = this.builder.group({
-            Email: ['', [common_1.Validators.required, common_1.Validators.pattern("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}")]],
+            Username: ['', [common_1.Validators.required]],
             Password: ['', [common_1.Validators.required]]
         });
         if (angular2_jwt_1.tokenNotExpired()) {
             s.condition = false;
-            if (localStorage.getItem('user_type') === "admin") {
-                this.router.navigate(['/admin_dashboard']);
-            }
-            else {
-                this.router.navigate(['/profile']);
-            }
+            this.router.navigate(['/admin_dashboard']);
         }
         else {
             s.condition = true;
             s.login = true;
-            s.signup = false;
+            s.signup = true;
         }
     }
-    LoginComponent.prototype.login = function (c, isValid) {
+    AdminLoginComponent.prototype.login = function (c, isValid) {
         var _this = this;
         if (isValid) {
             this.showerr = true;
             this.rr.login(c).subscribe(function (response) {
                 localStorage.setItem('id_token', response.json().id_token);
+                localStorage.setItem('loggedin', response.json().loggedin);
+                localStorage.setItem('user_type', response.json().user_type);
                 _this.dat = response.json().loggedin;
-                _this.router.navigate(['/profile']);
+                _this.router.navigate(['/admin_dashboard']);
             }, function (error) {
                 _this.showser_err = false;
                 console.log(error);
@@ -60,17 +57,17 @@ var LoginComponent = (function () {
             this.showerr = false;
         }
     };
-    LoginComponent = __decorate([
+    AdminLoginComponent = __decorate([
         core_1.Component({
-            selector: 'login',
-            providers: [login_service_1.LoginService],
+            selector: 'admin-login',
+            providers: [admin_login_service_1.AdminLoginService],
             directives: [forms_1.REACTIVE_FORM_DIRECTIVES, router_1.ROUTER_DIRECTIVES, common_1.CORE_DIRECTIVES],
-            templateUrl: './client_side/app/login/login.component.html',
-            styleUrls: ['client_side/app/login/login.component.css']
+            templateUrl: './client_side/app/admin_login/admin_login.html',
+            styleUrls: ['client_side/app/admin_login/admin_login.css']
         }), 
-        __metadata('design:paramtypes', [login_service_1.LoginService, forms_1.FormBuilder, router_1.Router, sharedservice_1.sharedService])
-    ], LoginComponent);
-    return LoginComponent;
+        __metadata('design:paramtypes', [admin_login_service_1.AdminLoginService, forms_1.FormBuilder, router_1.Router, sharedservice_1.sharedService])
+    ], AdminLoginComponent);
+    return AdminLoginComponent;
 }());
-exports.LoginComponent = LoginComponent;
-//# sourceMappingURL=login.component.js.map
+exports.AdminLoginComponent = AdminLoginComponent;
+//# sourceMappingURL=admin_login.component.js.map

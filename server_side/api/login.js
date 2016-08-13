@@ -46,3 +46,34 @@ app.post('/user_login', function(req, res) {
 
   
 });
+
+//admin login
+app.post('/admin_login', function(req, res) {
+  
+ db.administrations.findOne({ 'username': req.body.Username.toLowerCase()  }, 'username password', function (err, user) {
+  if (err) return handleError(err);
+ 
+
+ 
+  if (!user) {
+     
+    return res.status(401).send("The username or password don't match..");
+    
+  }
+
+  if (!(user.password === req.body.Password)) {
+    
+    return res.status(401).send("The username or password don't match");
+   
+  }
+
+  res.status(201).send({
+    id_token: createToken(user),loggedin: "true",user_type:"admin"
+  });
+ 
+})
+
+
+  
+});
+
