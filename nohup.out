@@ -1,0 +1,626 @@
+
+> onlinequiz@1.0.0 start /home/onlinequiz
+> tsc && concurrently "npm run tsc:w" "node-dev ./server_side/server"  
+
+[0] 
+[0] > onlinequiz@1.0.0 tsc:w /home/onlinequiz
+[0] > tsc -w
+[0] 
+[1] Running ---  on: 8081
+[1] Connected To Database............ OnlineQuiz
+[0] 10:04:55 PM - Compilation complete. Watching for file changes.
+
+> onlinequiz@1.0.0 start /home/onlinequiz
+> tsc && concurrently "npm run tsc:w" "node-dev ./server_side/server"  
+
+[0] 
+[0] > onlinequiz@1.0.0 tsc:w /home/onlinequiz
+[0] > tsc -w
+[0] 
+[1] Running ---  on: 8081
+[1] Connected To Database............ OnlineQuiz
+[0] 10:09:27 PM - Compilation complete. Watching for file changes.
+[1] siva...{"Name":"Karthik","Email":"ns1.qat@gmail.com","Dob":"1978-10-27","Sex":"Male","work":"Engineer","Area":"Doha","C_Area":"Doha","Reference":"GiriBhai","Skill":"Telecom"}
+[1] Before Storing Data: { name: 'Karthik',
+[1]   password: 'undefined',
+[1]   email: 'ns1.qat@gmail.com',
+[1]   dob: 1978-10-27T00:00:00.000Z,
+[1]   sex: 'Male',
+[1]   area: 'Doha',
+[1]   c_area: 'Doha',
+[1]   reference: 'GiriBhai',
+[1]   _id: 57a6162122dd01ff0d3b778d,
+[1]   group_set: [],
+[1]   skill_set: [ 'Telecom' ],
+[1]   roles: null }
+[1] (node:3583) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+[1] Saved Successfully: { __v: 0,
+[1]   name: 'Karthik',
+[1]   password: 'undefined',
+[1]   email: 'ns1.qat@gmail.com',
+[1]   dob: 1978-10-27T00:00:00.000Z,
+[1]   sex: 'Male',
+[1]   area: 'Doha',
+[1]   c_area: 'Doha',
+[1]   reference: 'GiriBhai',
+[1]   _id: 57a6162122dd01ff0d3b778d,
+[1]   group_set: [],
+[1]   skill_set: [ 'Telecom' ],
+[1]   roles: null }
+[1] came into send email method:
+[1] Message sent: 250 2.0.0 OK 1470502434 j47sm2126270otd.38 - gsmtp
+[1] Nice12
+[1] Password has been Updated...{ name: 'Karthik',
+[1]   password: 'undefined',
+[1]   email: 'ns1.qat@gmail.com',
+[1]   dob: 1978-10-27T00:00:00.000Z,
+[1]   sex: 'Male',
+[1]   area: 'Doha',
+[1]   c_area: 'Doha',
+[1]   reference: 'GiriBhai',
+[1]   _id: 57a6162122dd01ff0d3b778d,
+[1]   __v: 0,
+[1]   group_set: [],
+[1]   skill_set: [ 'Telecom' ],
+[1]   roles: null }
+[1] [INFO] 17:20:58 Restarting
+[1] /home/onlinequiz/server_side/lib_list.js:2
+[1] <<<<<<< HEAD
+[1] ^^
+[1] SyntaxError: Unexpected token <<
+[1]     at Object.exports.runInThisContext (vm.js:76:16)
+[1]     at Object.obj.(anonymous function) [as runInThisContext] (/usr/lib/node_modules/node-dev/lib/hook.js:30:19)
+[1]     at Module._compile (module.js:513:28)
+[1]     at Module._extensions..js (module.js:550:10)
+[1]     at Object.nodeDevHook [as .js] (/usr/lib/node_modules/node-dev/lib/hook.js:61:7)
+[1]     at Module.load (module.js:458:32)
+[1]     at tryModuleLoad (module.js:417:12)
+[1]     at Function.Module._load (module.js:409:3)
+[1]     at Module.require (module.js:468:17)
+[1]     at require (internal/module.js:20:19)
+[1] [ERROR] 17:20:58 SyntaxError
+[0] 5:20:58 PM - File change detected. Starting incremental compilation...
+[0] client_side/app/common/auth.guard.ts(3,33): error TS2307: Cannot find module 'angular2-jwt'.
+[0] client_side/app/profile/profile.component.ts(5,36): error TS2307: Cannot find module 'angular2-jwt'.
+[0] client_side/app/main.ts(7,32): error TS2307: Cannot find module 'angular2-jwt'.
+[0] 5:21:00 PM - Compilation complete. Watching for file changes.
+[1] [INFO] 17:32:19 Restarting
+[1] /home/onlinequiz/server_side/api/send_email.js:11
+[1] <<<<<<< HEAD
+[1] ^^
+[1] SyntaxError: Unexpected token <<
+[1]     at Object.exports.runInThisContext (vm.js:76:16)
+[1]     at Object.obj.(anonymous function) [as runInThisContext] (/usr/lib/node_modules/node-dev/lib/hook.js:30:19)
+[1]     at Module._compile (module.js:513:28)
+[1]     at Module._extensions..js (module.js:550:10)
+[1]     at Object.nodeDevHook [as .js] (/usr/lib/node_modules/node-dev/lib/hook.js:61:7)
+[1]     at Module.load (module.js:458:32)
+[1]     at tryModuleLoad (module.js:417:12)
+[1]     at Function.Module._load (module.js:409:3)
+[1]     at Module.require (module.js:468:17)
+[1]     at require (internal/module.js:20:19)
+[1] [ERROR] 17:32:19 SyntaxError
+[1] [INFO] 17:38:38 Restarting
+[1] Error: Cannot find module 'emailjs'
+[1]     at Function.Module._resolveFilename (module.js:440:15)
+[1]     at Function.Module._load (module.js:388:25)
+[1]     at Module.require (module.js:468:17)
+[1]     at require (internal/module.js:20:19)
+[1]     at Object.<anonymous> (/home/onlinequiz/server_side/api/send_email.js:2:15)
+[1]     at Module._compile (module.js:541:32)
+[1]     at Module._extensions..js (module.js:550:10)
+[1]     at Object.nodeDevHook [as .js] (/usr/lib/node_modules/node-dev/lib/hook.js:61:7)
+[1]     at Module.load (module.js:458:32)
+[1]     at tryModuleLoad (module.js:417:12)
+[1] [ERROR] 17:38:38 Error
+[0] 5:59:09 PM - File change detected. Starting incremental compilation...
+[0] 5:59:11 PM - Compilation complete. Watching for file changes.
+[1] [INFO] 18:10:18 Restarting
+[1] Running ---  on: 8081
+[1] Connected To Database............ OnlineQuiz
+[1] [INFO] 18:15:06 Restarting
+[1] Running ---  on: 8081
+[1] Connected To Database............ OnlineQuiz
+[1] [INFO] 18:16:11 Restarting
+[1] Running ---  on: 8081
+[1] Connected To Database............ OnlineQuiz
+[1] [INFO] 18:17:49 Restarting
+[1] Running ---  on: 8081
+[1] Connected To Database............ OnlineQuiz
+[1] [INFO] 18:19:09 Restarting
+[1] Running ---  on: 8081
+[1] Connected To Database............ OnlineQuiz
+[1] [INFO] 18:23:16 Restarting
+[1] Running ---  on: 8081
+[1] Connected To Database............ OnlineQuiz
+[1] [INFO] 18:38:26 Restarting
+[1] Running ---  on: 8081
+[1] Connected To Database............ OnlineQuiz
+[1] siva...{"Name":"rajprakash","Email":"rajprakash05@gmail.com","Dob":"2007-11-15","Sex":"Male","Work":"engineering","Area":"Doha","C_Area":"Doha","Reference":"es","Phone_No1":1234452525,"Phone_No2":233344,"Skill":"java"}
+[1] Before Storing Data: { name: 'rajprakash',
+[1]   password: 'undefined',
+[1]   email: 'rajprakash05@gmail.com',
+[1]   dob: 2007-11-15T00:00:00.000Z,
+[1]   sex: 'Male',
+[1]   work: 'engineering',
+[1]   area: 'Doha',
+[1]   c_area: 'Doha',
+[1]   reference: 'es',
+[1]   _id: 57ac799221b15e4157628276,
+[1]   group_set: [],
+[1]   skill_set: [ 'java' ],
+[1]   roles: null }
+[1] (node:22337) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+[1] Saved Successfully: { __v: 0,
+[1]   name: 'rajprakash',
+[1]   password: 'undefined',
+[1]   email: 'rajprakash05@gmail.com',
+[1]   dob: 2007-11-15T00:00:00.000Z,
+[1]   sex: 'Male',
+[1]   work: 'engineering',
+[1]   area: 'Doha',
+[1]   c_area: 'Doha',
+[1]   reference: 'es',
+[1]   _id: 57ac799221b15e4157628276,
+[1]   group_set: [],
+[1]   skill_set: [ 'java' ],
+[1]   roles: null }
+[1] came into send email method:
+[1] Message sent: 250 2.0.0 OK 1470921107 w49sm1190395otw.30 - gsmtp
+[1] rajraj
+[1] Password has been Updated...{ __v: 0,
+[1]   _id: 57ac799221b15e4157628276,
+[1]   area: 'Doha',
+[1]   c_area: 'Doha',
+[1]   dob: 2007-11-15T00:00:00.000Z,
+[1]   email: 'rajprakash05@gmail.com',
+[1]   name: 'rajprakash',
+[1]   password: '57ac799221b15e4157628276',
+[1]   reference: 'es',
+[1]   sex: 'Male',
+[1]   work: 'engineering',
+[1]   group_set: [],
+[1]   skill_set: [ 'java' ],
+[1]   roles: null }
+[1] [INFO] 18:47:14 Restarting
+[1] Running ---  on: 8081
+[1] Connected To Database............ OnlineQuiz
+[1] siva...{"Name":"Giridharan","Email":"giriscse@gmail.com","Dob":"23-11-1991","Sex":"Male","Work":"Engineer","Area":"Doha","C_Area":"Doha","Reference":"Siva","Phone_No1":55808216,"Phone_No2":30089645,"Skill":"MEP"}
+[1] Before Storing Data: { name: 'Giridharan',
+[1]   password: 'undefined',
+[1]   email: 'giriscse@gmail.com',
+[1]   sex: 'Male',
+[1]   work: 'Engineer',
+[1]   area: 'Doha',
+[1]   c_area: 'Doha',
+[1]   reference: 'Siva',
+[1]   _id: 57ac7ea6aaf3c966577e9b1f,
+[1]   group_set: [],
+[1]   skill_set: [ 'MEP' ],
+[1]   roles: null }
+[1] (node:22374) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+[1] Error in Saving Data: ValidationError: CastError: Cast to Date failed for value "23-11-1991" at path "dob"
+[1] siva...{"Name":"GiriGS","Email":"giridharangulf@gmail.com","Dob":"23-11-1991","Sex":"Male","Work":"Engineer","Area":"Doha","C_Area":"Doha","Reference":"Siva","Phone_No1":55808216,"Phone_No2":30089645,"Skill":"MEP"}
+[1] Before Storing Data: { name: 'GiriGS',
+[1]   password: 'undefined',
+[1]   email: 'giridharangulf@gmail.com',
+[1]   sex: 'Male',
+[1]   work: 'Engineer',
+[1]   area: 'Doha',
+[1]   c_area: 'Doha',
+[1]   reference: 'Siva',
+[1]   _id: 57ac8012aaf3c966577e9b20,
+[1]   group_set: [],
+[1]   skill_set: [ 'MEP' ],
+[1]   roles: null }
+[1] Error in Saving Data: ValidationError: CastError: Cast to Date failed for value "23-11-1991" at path "dob"
+[1] siva...{"Name":"Giridharan","Email":"giridharangs23@gmail.com","Dob":"23-11-1991","Sex":"Male","Work":"Engg","Area":"Doha","C_Area":"Doha","Reference":"Siva","Phone_No1":55808216,"Phone_No2":30089645,"Skill":"MEP"}
+[1] Before Storing Data: { name: 'Giridharan',
+[1]   password: 'undefined',
+[1]   email: 'giridharangs23@gmail.com',
+[1]   sex: 'Male',
+[1]   work: 'Engg',
+[1]   area: 'Doha',
+[1]   c_area: 'Doha',
+[1]   reference: 'Siva',
+[1]   _id: 57ac80feaaf3c966577e9b21,
+[1]   group_set: [],
+[1]   skill_set: [ 'MEP' ],
+[1]   roles: null }
+[1] Error in Saving Data: ValidationError: CastError: Cast to Date failed for value "23-11-1991" at path "dob"
+[1] siva...{"Name":"vinot","Email":"rajprakash05@hotmail.com","Dob":"2016-08-18","Sex":"Male","Work":"dev","Area":"Doha","C_Area":"Doha","Reference":"raj","Phone_No1":3456,"Phone_No2":34355,"Skill":"java"}
+[1] Before Storing Data: { name: 'vinot',
+[1]   password: 'undefined',
+[1]   email: 'rajprakash05@hotmail.com',
+[1]   dob: 2016-08-18T00:00:00.000Z,
+[1]   sex: 'Male',
+[1]   work: 'dev',
+[1]   area: 'Doha',
+[1]   c_area: 'Doha',
+[1]   reference: 'raj',
+[1]   _id: 57ac87fdaaf3c966577e9b22,
+[1]   group_set: [],
+[1]   skill_set: [ 'java' ],
+[1]   roles: null }
+[1] Saved Successfully: { __v: 0,
+[1]   name: 'vinot',
+[1]   password: 'undefined',
+[1]   email: 'rajprakash05@hotmail.com',
+[1]   dob: 2016-08-18T00:00:00.000Z,
+[1]   sex: 'Male',
+[1]   work: 'dev',
+[1]   area: 'Doha',
+[1]   c_area: 'Doha',
+[1]   reference: 'raj',
+[1]   _id: 57ac87fdaaf3c966577e9b22,
+[1]   group_set: [],
+[1]   skill_set: [ 'java' ],
+[1]   roles: null }
+[1] came into send email method:
+[1] Message sent: 250 2.0.0 OK 1470924798 59sm1326552otw.9 - gsmtp
+[1] siva...{"Name":"Giridharan","Email":"giridharangs23@gmail.com","Dob":"23-11-1991","Sex":"Male","Work":"Enginner","Area":"Test","C_Area":"Doha","Reference":"Siva","Phone_No1":55808216,"Phone_No2":30089645,"Skill":"MEP"}
+[1] Before Storing Data: { name: 'Giridharan',
+[1]   password: 'undefined',
+[1]   email: 'giridharangs23@gmail.com',
+[1]   sex: 'Male',
+[1]   work: 'Enginner',
+[1]   area: 'Test',
+[1]   c_area: 'Doha',
+[1]   reference: 'Siva',
+[1]   _id: 57ac8a68aaf3c966577e9b23,
+[1]   group_set: [],
+[1]   skill_set: [ 'MEP' ],
+[1]   roles: null }
+[1] Error in Saving Data: ValidationError: CastError: Cast to Date failed for value "23-11-1991" at path "dob"
+[1] siva...{"Name":"SivaMoorthy","Email":"sivabgs27@gmail.com","Dob":"2016-08-23","Sex":"Male","Work":"Engineer","Area":"Doha","C_Area":"Doha","Reference":"Giri","Phone_No1":789456123,"Phone_No2":9857412536,"Skill":"java, angularjs, nodejs"}
+[1] Before Storing Data: { name: 'SivaMoorthy',
+[1]   password: 'undefined',
+[1]   email: 'sivabgs27@gmail.com',
+[1]   dob: 2016-08-23T00:00:00.000Z,
+[1]   sex: 'Male',
+[1]   work: 'Engineer',
+[1]   area: 'Doha',
+[1]   c_area: 'Doha',
+[1]   reference: 'Giri',
+[1]   _id: 57ac8c00aaf3c966577e9b24,
+[1]   group_set: [],
+[1]   skill_set: [ 'java, angularjs, nodejs' ],
+[1]   roles: null }
+[1] Saved Successfully: { __v: 0,
+[1]   name: 'SivaMoorthy',
+[1]   password: 'undefined',
+[1]   email: 'sivabgs27@gmail.com',
+[1]   dob: 2016-08-23T00:00:00.000Z,
+[1]   sex: 'Male',
+[1]   work: 'Engineer',
+[1]   area: 'Doha',
+[1]   c_area: 'Doha',
+[1]   reference: 'Giri',
+[1]   _id: 57ac8c00aaf3c966577e9b24,
+[1]   group_set: [],
+[1]   skill_set: [ 'java, angularjs, nodejs' ],
+[1]   roles: null }
+[1] came into send email method:
+[1] Message sent: 250 2.0.0 OK 1470925825 r38sm1354277ota.22 - gsmtp
+[1] girisivas
+[1] Password has been Updated...{ __v: 0,
+[1]   _id: 57ac8c00aaf3c966577e9b24,
+[1]   area: 'Doha',
+[1]   c_area: 'Doha',
+[1]   dob: 2016-08-23T00:00:00.000Z,
+[1]   email: 'sivabgs27@gmail.com',
+[1]   name: 'SivaMoorthy',
+[1]   password: '57ac8c00aaf3c966577e9b24',
+[1]   reference: 'Giri',
+[1]   sex: 'Male',
+[1]   work: 'Engineer',
+[1]   group_set: [],
+[1]   skill_set: [ 'java, angularjs, nodejs' ],
+[1]   roles: null }
+[1] [INFO] 20:04:31 Restarting
+[1] Running ---  on: 8081
+[1] Connected To Database............ OnlineQuiz
+[1] [INFO] 20:06:36 Restarting
+[1] Running ---  on: 8081
+[1] Connected To Database............ OnlineQuiz
+[1] vinovino
+[1] Password has been Updated...null
+[1] siva...{"Name":"Sivamoorthy ","Email":"sivabgs27@gmail.com","Dob":"2016-08-26","Sex":"Male","Work":"Engineer","Area":"Doha","C_Area":"Doha","Reference":"Giri","Phone_No1":987654321,"Phone_No2":1213456789,"Skill":"java, angularjs, nodejs"}
+[1] Before Storing Data: { name: 'Sivamoorthy ',
+[1]   password: 'undefined',
+[1]   email: 'sivabgs27@gmail.com',
+[1]   dob: 2016-08-26T00:00:00.000Z,
+[1]   sex: 'Male',
+[1]   work: 'Engineer',
+[1]   area: 'Doha',
+[1]   c_area: 'Doha',
+[1]   reference: 'Giri',
+[1]   _id: 57ac8df04be8edc45a43e275,
+[1]   group_set: [],
+[1]   skill_set: [ 'java, angularjs, nodejs' ],
+[1]   roles: null }
+[1] (node:23236) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+[1] Saved Successfully: { __v: 0,
+[1]   name: 'Sivamoorthy ',
+[1]   password: 'undefined',
+[1]   email: 'sivabgs27@gmail.com',
+[1]   dob: 2016-08-26T00:00:00.000Z,
+[1]   sex: 'Male',
+[1]   work: 'Engineer',
+[1]   area: 'Doha',
+[1]   c_area: 'Doha',
+[1]   reference: 'Giri',
+[1]   _id: 57ac8df04be8edc45a43e275,
+[1]   group_set: [],
+[1]   skill_set: [ 'java, angularjs, nodejs' ],
+[1]   roles: null }
+[1] came into send email method:
+[1] Message sent: 250 2.0.0 OK 1470926320 s132sm1391594oif.3 - gsmtp
+[1] banumathy27
+[1] Password has been Updated...{ __v: 0,
+[1]   _id: 57ac8df04be8edc45a43e275,
+[1]   area: 'Doha',
+[1]   c_area: 'Doha',
+[1]   dob: 2016-08-26T00:00:00.000Z,
+[1]   email: 'sivabgs27@gmail.com',
+[1]   name: 'Sivamoorthy ',
+[1]   password: '57ac8df04be8edc45a43e275',
+[1]   reference: 'Giri',
+[1]   sex: 'Male',
+[1]   work: 'Engineer',
+[1]   group_set: [],
+[1]   skill_set: [ 'java, angularjs, nodejs' ],
+[1]   roles: null }
+[1] [INFO] 20:17:02 Restarting
+[1] /home/onlinequiz/server_side/server.js:10
+[1] const port = 8080i;
+[1]                  ^
+[1] SyntaxError: Unexpected identifier
+[1]     at Object.exports.runInThisContext (vm.js:76:16)
+[1]     at Object.obj.(anonymous function) [as runInThisContext] (/usr/lib/node_modules/node-dev/lib/hook.js:30:19)
+[1]     at Module._compile (module.js:513:28)
+[1]     at Module._extensions..js (module.js:550:10)
+[1]     at Object.nodeDevHook [as .js] (/usr/lib/node_modules/node-dev/lib/hook.js:61:7)
+[1]     at Module.load (module.js:458:32)
+[1]     at tryModuleLoad (module.js:417:12)
+[1]     at Function.Module._load (module.js:409:3)
+[1]     at Module.require (module.js:468:17)
+[1]     at require (internal/module.js:20:19)
+[1] [ERROR] 20:17:02 SyntaxError
+[1] [INFO] 20:19:49 Restarting
+[1] Running ---  on: 8081
+[1] Connected To Database............ OnlineQuiz
+[1] siva...{"Name":"rajprakash","Email":"rajprakash05@gmail.com","Dob":"2016-08-13","Sex":"Male","Work":"engineer","Area":"Test","C_Area":"Test","Reference":"ddd","Phone_No1":87868668678766,"Phone_No2":6778786787,"Skill":"java,"}
+[1] Before Storing Data: { name: 'rajprakash',
+[1]   password: 'undefined',
+[1]   email: 'rajprakash05@gmail.com',
+[1]   dob: 2016-08-13T00:00:00.000Z,
+[1]   sex: 'Male',
+[1]   work: 'engineer',
+[1]   area: 'Test',
+[1]   c_area: 'Test',
+[1]   reference: 'ddd',
+[1]   _id: 57ac912a617c9cb55bc2f9c9,
+[1]   group_set: [],
+[1]   skill_set: [ 'java,' ],
+[1]   roles: null }
+[1] (node:23477) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+[1] Saved Successfully: { __v: 0,
+[1]   name: 'rajprakash',
+[1]   password: 'undefined',
+[1]   email: 'rajprakash05@gmail.com',
+[1]   dob: 2016-08-13T00:00:00.000Z,
+[1]   sex: 'Male',
+[1]   work: 'engineer',
+[1]   area: 'Test',
+[1]   c_area: 'Test',
+[1]   reference: 'ddd',
+[1]   _id: 57ac912a617c9cb55bc2f9c9,
+[1]   group_set: [],
+[1]   skill_set: [ 'java,' ],
+[1]   roles: null }
+[1] came into send email method:
+[1] Message sent: 250 2.0.0 OK 1470927146 l22sm1400623otd.11 - gsmtp
+[1] raj
+[1] Password has been Updated...null
+[1] rajraj
+[1] Password has been Updated...{ __v: 0,
+[1]   _id: 57ac912a617c9cb55bc2f9c9,
+[1]   area: 'Test',
+[1]   c_area: 'Test',
+[1]   dob: 2016-08-13T00:00:00.000Z,
+[1]   email: 'rajprakash05@gmail.com',
+[1]   name: 'rajprakash',
+[1]   password: '57ac912a617c9cb55bc2f9c9',
+[1]   reference: 'ddd',
+[1]   sex: 'Male',
+[1]   work: 'engineer',
+[1]   group_set: [],
+[1]   skill_set: [ 'java,' ],
+[1]   roles: null }
+[1] siva...{"Name":"GiriGS","Email":"giri@bgsengineering.com","Dob":"23-11-1991","Sex":"Male","Work":"MEP","Area":"Doha","C_Area":"Test","Reference":"Siva","Phone_No1":55808216,"Phone_No2":30089645,"Skill":"Engineer"}
+[1] Before Storing Data: { name: 'GiriGS',
+[1]   password: 'undefined',
+[1]   email: 'giri@bgsengineering.com',
+[1]   sex: 'Male',
+[1]   work: 'MEP',
+[1]   area: 'Doha',
+[1]   c_area: 'Test',
+[1]   reference: 'Siva',
+[1]   _id: 57ad8f1b617c9cb55bc2f9ca,
+[1]   group_set: [],
+[1]   skill_set: [ 'Engineer' ],
+[1]   roles: null }
+[1] Error in Saving Data: ValidationError: CastError: Cast to Date failed for value "23-11-1991" at path "dob"
+[1] siva...{"Name":"gggggggg","Email":"sivabgs27@gmail.com","Dob":"23-11-1991","Sex":"Male","Work":"Mep","Area":"Doha","C_Area":"Test","Reference":"Siva","Phone_No1":55555555,"Phone_No2":546354244,"Skill":"jhfj"}
+[1] Before Storing Data: { name: 'gggggggg',
+[1]   password: 'undefined',
+[1]   email: 'sivabgs27@gmail.com',
+[1]   sex: 'Male',
+[1]   work: 'Mep',
+[1]   area: 'Doha',
+[1]   c_area: 'Test',
+[1]   reference: 'Siva',
+[1]   _id: 57ad8fd3617c9cb55bc2f9cb,
+[1]   group_set: [],
+[1]   skill_set: [ 'jhfj' ],
+[1]   roles: null }
+[1] Error in Saving Data: ValidationError: CastError: Cast to Date failed for value "23-11-1991" at path "dob"
+[1] siva...{"Name":"girigs","Email":"giridharangs23@gmail.com","Dob":"1991-05-07","Sex":"Male","Work":"Mep","Area":"Test","C_Area":"Doha","Reference":"siva","Phone_No1":55808216,"Phone_No2":300089645,"Skill":"Mep"}
+[1] Before Storing Data: { name: 'girigs',
+[1]   password: 'undefined',
+[1]   email: 'giridharangs23@gmail.com',
+[1]   dob: 1991-05-07T00:00:00.000Z,
+[1]   sex: 'Male',
+[1]   work: 'Mep',
+[1]   area: 'Test',
+[1]   c_area: 'Doha',
+[1]   reference: 'siva',
+[1]   _id: 57ad92f7617c9cb55bc2f9cc,
+[1]   group_set: [],
+[1]   skill_set: [ 'Mep' ],
+[1]   roles: null }
+[1] Saved Successfully: { __v: 0,
+[1]   name: 'girigs',
+[1]   password: 'undefined',
+[1]   email: 'giridharangs23@gmail.com',
+[1]   dob: 1991-05-07T00:00:00.000Z,
+[1]   sex: 'Male',
+[1]   work: 'Mep',
+[1]   area: 'Test',
+[1]   c_area: 'Doha',
+[1]   reference: 'siva',
+[1]   _id: 57ad92f7617c9cb55bc2f9cc,
+[1]   group_set: [],
+[1]   skill_set: [ 'Mep' ],
+[1]   roles: null }
+[1] came into send email method:
+[1] Message sent: 250 2.0.0 OK 1470993144 o126sm3080482oia.15 - gsmtp
+[1] engineergiri
+[1] Password has been Updated...{ __v: 0,
+[1]   _id: 57ad92f7617c9cb55bc2f9cc,
+[1]   area: 'Test',
+[1]   c_area: 'Doha',
+[1]   dob: 1991-05-07T00:00:00.000Z,
+[1]   email: 'giridharangs23@gmail.com',
+[1]   name: 'girigs',
+[1]   password: '57ad92f7617c9cb55bc2f9cc',
+[1]   reference: 'siva',
+[1]   sex: 'Male',
+[1]   work: 'Mep',
+[1]   group_set: [],
+[1]   skill_set: [ 'Mep' ],
+[1]   roles: null }
+[1] [INFO] 23:48:51 Restarting
+[0] 11:48:51 PM - File change detected. Starting incremental compilation...
+[1] /home/onlinequiz/server_side/database/pass_reg.js:9
+[1] <<<<<<< HEAD
+[1] ^^
+[1] SyntaxError: Unexpected token <<
+[1]     at Object.exports.runInThisContext (vm.js:76:16)
+[1]     at Object.obj.(anonymous function) [as runInThisContext] (/usr/lib/node_modules/node-dev/lib/hook.js:30:19)
+[1]     at Module._compile (module.js:513:28)
+[1]     at Module._extensions..js (module.js:550:10)
+[1]     at Object.nodeDevHook [as .js] (/usr/lib/node_modules/node-dev/lib/hook.js:61:7)
+[1]     at Module.load (module.js:458:32)
+[1]     at tryModuleLoad (module.js:417:12)
+[1]     at Function.Module._load (module.js:409:3)
+[1]     at Module.require (module.js:468:17)
+[1]     at require (internal/module.js:20:19)
+[1]     at Object.<anonymous> (/home/onlinequiz/server_side/lib_list.js:7:16)
+[1]     at Module._compile (module.js:541:32)
+[1]     at Module._extensions..js (module.js:550:10)
+[1]     at Object.nodeDevHook [as .js] (/usr/lib/node_modules/node-dev/lib/hook.js:61:7)
+[1]     at Module.load (module.js:458:32)
+[1]     at tryModuleLoad (module.js:417:12)
+[1] [ERROR] 23:48:52 SyntaxError
+[0] 11:48:53 PM - Compilation complete. Watching for file changes.
+[1] [INFO] 23:50:45 Restarting
+[1] Running ---  on: 8081
+[1] Connected To Database............ OnlineQuiz
+[1] [INFO] 23:51:59 Restarting
+[1] Running ---  on: 8081
+[1] Connected To Database............ OnlineQuiz
+[1] [INFO] 23:53:16 Restarting
+[1] Running ---  on: 8081
+[1] Connected To Database............ OnlineQuiz
+[1] siva...{"Name":"girigs","Email":"giridharangs23@gmail.com","Sex":"Male","Work":"jhgjgjk","Area":"Doha","C_Area":"Doha","Reference":"kjhkjgjk","Phone_No1":365365365,"Phone_No2":3543655,"Skill":"lk;k","Dob":"1991-11-23"}
+[1] Before Storing Data: { name: 'girigs',
+[1]   password: 'undefined',
+[1]   email: 'giridharangs23@gmail.com',
+[1]   dob: 1991-11-23T00:00:00.000Z,
+[1]   sex: 'Male',
+[1]   work: 'jhgjgjk',
+[1]   area: 'Doha',
+[1]   c_area: 'Doha',
+[1]   reference: 'kjhkjgjk',
+[1]   _id: 57ae16479f87b5626c52aa7b,
+[1]   group_set: [],
+[1]   skill_set: [ 'lk', 'k' ],
+[1]   roles: null }
+[1] (node:27746) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+[1] Saved Successfully: { __v: 0,
+[1]   name: 'girigs',
+[1]   password: 'undefined',
+[1]   email: 'giridharangs23@gmail.com',
+[1]   dob: 1991-11-23T00:00:00.000Z,
+[1]   sex: 'Male',
+[1]   work: 'jhgjgjk',
+[1]   area: 'Doha',
+[1]   c_area: 'Doha',
+[1]   reference: 'kjhkjgjk',
+[1]   _id: 57ae16479f87b5626c52aa7b,
+[1]   group_set: [],
+[1]   skill_set: [ 'lk', 'k' ],
+[1]   roles: null }
+[1] came into send email method:
+[1] Message sent: 250 2.0.0 OK 1471026760 w49sm3846519otw.30 - gsmtp
+[0] 12:07:49 AM - File change detected. Starting incremental compilation...
+[0] 12:07:51 AM - Compilation complete. Watching for file changes.
+[0] 12:58:51 AM - File change detected. Starting incremental compilation...
+[0] 12:58:52 AM - Compilation complete. Watching for file changes.
+[1] siva...{"Name":"Raghu","Email":"igiveemail@gmail.com","Sex":"Male","Work":"Engineer","Area":"Doha","C_Area":"Doha","Reference":"Siva","Phone_No1":987987987,"Phone_No2":9597987125,"Skill":"java, angularjs, nodejs","Dob":"2016-08-24"}
+[1] Before Storing Data: { name: 'Raghu',
+[1]   password: 'undefined',
+[1]   email: 'igiveemail@gmail.com',
+[1]   dob: 2016-08-24T00:00:00.000Z,
+[1]   sex: 'Male',
+[1]   work: 'Engineer',
+[1]   area: 'Doha',
+[1]   c_area: 'Doha',
+[1]   reference: 'Siva',
+[1]   _id: 57aeef8c9f87b5626c52aa7c,
+[1]   group_set: [],
+[1]   skill_set: [ 'java, angularjs, nodejs' ],
+[1]   roles: null }
+[1] Saved Successfully: { __v: 0,
+[1]   name: 'Raghu',
+[1]   password: 'undefined',
+[1]   email: 'igiveemail@gmail.com',
+[1]   dob: 2016-08-24T00:00:00.000Z,
+[1]   sex: 'Male',
+[1]   work: 'Engineer',
+[1]   area: 'Doha',
+[1]   c_area: 'Doha',
+[1]   reference: 'Siva',
+[1]   _id: 57aeef8c9f87b5626c52aa7c,
+[1]   group_set: [],
+[1]   skill_set: [ 'java, angularjs, nodejs' ],
+[1]   roles: null }
+[1] came into send email method:
+[1] Message sent: 250 2.0.0 OK 1471082381 f47sm5117130ote.20 - gsmtp
+[1] 123456789
+[1] Password has been Updated...{ __v: 0,
+[1]   _id: 57aeef8c9f87b5626c52aa7c,
+[1]   area: 'Doha',
+[1]   c_area: 'Doha',
+[1]   dob: 2016-08-24T00:00:00.000Z,
+[1]   email: 'igiveemail@gmail.com',
+[1]   name: 'Raghu',
+[1]   password: '57aeef8c9f87b5626c52aa7c',
+[1]   reference: 'Siva',
+[1]   sex: 'Male',
+[1]   work: 'Engineer',
+[1]   group_set: [],
+[1]   skill_set: [ 'java, angularjs, nodejs' ],
+[1]   roles: null }
